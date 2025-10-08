@@ -6,8 +6,122 @@ body {
 
 button {
   cursor: pointer;
+  font: inherit;
 }
 
 html {
   scroll-behavior: smooth;
+}
+.main-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Styles for h2 Mobile devices and Tablet devices */
+.section-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .section-title {
+    font-size: 48px;
+  }
+}
+
+/* Orange button styles */
+.btn-orange {
+  border: 1px solid #e15d05;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #e15d05;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.btn-orange:hover,
+.btn-orange:focus {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #0b0500;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.btn-orange:active {
+  border: 1px solid #b44a04;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #b44a04;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.btn-orange:disabled {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #0b0500;
+  opacity: 0.2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Transparent button styles */
+.btn-transparent {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #ea8d50;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+
+.btn-transparent:active {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: #dad9d8;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+
+.btn-transparent:disabled {
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  opacity: 0.2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0b0500;
 }
