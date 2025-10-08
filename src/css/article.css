@@ -1,0 +1,42 @@
+.article {
+  padding: 64px 0;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-wrapper-text {
+  text-align: left;
+}
+
+.article-title {
+  margin-bottom: 24px;
+}
+
+.main-text.article-text {
+  margin-bottom: 32px;
+}
+
+.article-image {
+  border-radius: 16px;
+  object-fit: cover;
+  transform: scale(1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 2s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: breathe 6s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
