@@ -1,6 +1,6 @@
 <!-- ----------------feedbacks section---------------- -->
 <section id="feedback" class="feedback">
-  <div class="containers">
+  <div class="container">
     <div class="feedback-textbox">
       <h2 class="feedback-title">Customer Feedbacks</h2>
       <p class="section-text">See what our readers are saying about us!</p>
@@ -16,7 +16,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/Jane Doe2.jpg"
+              src="./img/feedbacks/Jane Doe2.jpg"
               alt="John Doe"
               class="feedback-item-userimg"
               width="48"
@@ -38,7 +38,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/John Smith2.jpg"
+              src="./img/feedbacks/John Smith2.jpg"
               alt="John Smith"
               class="feedback-item-userimg"
               width="48"
@@ -60,7 +60,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/Emily Johnson2.jpg"
+              src="./img/feedbacks/Emily Johnson2.jpg"
               alt="Emily Johnson"
               class="feedback-item-userimg"
               width="48"
@@ -89,8 +89,16 @@
         <!-- пагінація -->
         <div class="swiper-pagination"></div>
         <div class="swiper-btn-subbox">
-          <button class="btn-orange swiper-button-prev"></button>
-          <button class="btn-orange swiper-button-next"></button>
+          <button class="btn-orange swiper-button-prev">
+            <svg class="swiper-svg-button-prev" width="24" height="24">
+              <use href="/img/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+          <button class="btn-orange swiper-button-next">
+            <svg class="swiper-svg-button-next" width="24" height="24">
+              <use href="/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
