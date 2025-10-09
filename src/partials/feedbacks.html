@@ -1,11 +1,11 @@
 <!-- ----------------feedbacks section---------------- -->
 <section id="feedback" class="feedback">
-  <div class="container feedback-container">
+  <div class="container">
     <div class="feedback-textbox">
-      <h2 class="section-title">Customer Feedbacks</h2>
+      <h2 class="feedback-title">Customer Feedbacks</h2>
       <p class="section-text">See what our readers are saying about us!</p>
     </div>
-    <div class="feedback-swiper swiper">
+    <div class="swiper feedback-swiper">
       <ul class="feedback-list swiper-wrapper">
         <li class="feedback-item swiper-slide">
           <p class="feedback-item-text">
@@ -52,22 +52,24 @@
           <h3 class="feedback-item-username">Emily Johnson</h3>
           <p class="feedback-item-userrole">Author, Novelist</p>
         </li>
+        <li class="feedback-item swiper-slide">
+          <p class="feedback-descr">"Fast delivery and good quality."</p>
+          <p class="feedback-name">— Emily Davis</p>
+        </li>
+        <li class="feedback-item swiper-slide">
+          <p class="feedback-descr">
+            "I will recommend this shop to my friends."
+          </p>
+          <p class="feedback-name">— Chris Wilson</p>
+        </li>
       </ul>
-      <div class="swiper-container">
-        <div class="swiper-pagination"></div>
-        <div class="swaper-btn-subbox">
-          <button class="btn-orange swiper-button-prev">
-            <svg class="swiper-svg-button-prev" width="24" height="24">
-              <use href=""></use>
-            </svg>
-          </button>
-          <button class="btn-orange swiper-button-next">
-            <svg class="swiper-svg-button-next" width="24" height="24">
-              <use href=""></use>
-            </svg>
-          </button>
-        </div>
-      </div>
+
+      <!-- кнопки -->
+      <button class="btn-orange swiper-button-prev"></button>
+      <button class="btn-orange swiper-button-next"></button>
+
+      <!-- пагінація -->
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
