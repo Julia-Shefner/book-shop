@@ -1,24 +1,10 @@
 /* Styles for Mobile devices */
 .container {
   width: 100%;
-  /* max-width: 375px; */
-  /* min-width: 320px; */
+  max-width: 375px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 16px;
-}
-
-@media (max-width: 320px) {
-  .container {
-    width: 320px;
-    padding: 0 16px;
-  }
-}
-
-@media (min-width: 375px) {
-  .container {
-    /* width: 375px; */
-    padding: 0 16px;
-  }
 }
 
 /* Styles for Tablet devices */
