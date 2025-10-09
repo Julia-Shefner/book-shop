@@ -11,7 +11,6 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
   padding: 20px;
-  background: #fff;
 }
 
 .feedback-item-content {
@@ -26,6 +25,10 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
+}
+
+.feedback-item-userimg {
+  border-radius: 100%;
 }
 
 .btn-orange {
