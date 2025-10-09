@@ -35,93 +35,106 @@ html {
 
 /* Orange button styles */
 .btn-orange {
+  height: 48px;
   border: 1px solid #e15d05;
   border-radius: 4px;
   padding: 12px 24px;
-  background: #e15d05;
+  background-color: #e15d05;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-orange:hover,
 .btn-orange:focus {
-  border: 1px solid #0b0500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  background: #0b0500;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
+  background-color: #0b0500;
+  border: #0b0500;
 }
 
 .btn-orange:active {
   border: 1px solid #b44a04;
-  border-radius: 4px;
-  padding: 12px 24px;
-  background: #b44a04;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
+  background-color: #b44a04;
 }
 
 .btn-orange:disabled {
   border: 1px solid #0b0500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  background: #0b0500;
+  background-color: #0b0500;
   opacity: 0.2;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
 }
 
 /* Transparent button styles */
 .btn-transparent {
+  height: 48px;
   border: 1px solid #0b0500;
   border-radius: 4px;
   padding: 12px 24px;
-  background: transparent;
+  background-color: transparent;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #0b0500;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-transparent:hover,
 .btn-transparent:focus {
   border: 1px solid #0b0500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  background: #ea8d50;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
+  background-color: #ea8d50;
 }
 
 .btn-transparent:active {
   border: 1px solid #0b0500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  background: #dad9d8;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
+  background-color: #dad9d8;
 }
 
 .btn-transparent:disabled {
   border: 1px solid #0b0500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  opacity: 0.2;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
   color: #0b0500;
+  opacity: 0.2;
+}
+
+/* Orange arrow button styles */
+.btn-arrow {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #e15d05;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-arrow-icon {
+  fill: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-arrow:hover,
+.btn-arrow:focus {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: #fceee6;
+}
+
+.btn-arrow:hover .btn-arrow-icon,
+.btn-arrow:focus .btn-arrow-icon {
+  fill: #0b0500;
+}
+
+.btn-arrow:active {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: #5a2502;
+}
+
+.btn-arrow:disabled {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: #e15d05;
+  opacity: 0.2;
+}
+
+.btn-arrow-icon:disabled {
+  fill: #0b0500;
+  opacity: 0.2;
 }
