@@ -10,7 +10,7 @@
 .feedback-text {
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 80px;
+  margin-bottom: 80px !important;
 }
 
 .feedback {
@@ -55,10 +55,9 @@
   border-radius: 0px;
 }
 
-.swiper-svg-button-prev .swiper-svg-button-next {
-  color: #fff;
-  align-items: center;
-  justify-content: center;
+.swiper-svg-button-prev,
+.swiper-svg-button-next {
+  fill: #ffffff;
 }
 
 .swiper .swiper-pagination {
@@ -76,12 +75,12 @@
   margin-right: 0 !important;
 }
 
-.swiper-container {
+/* .swiper-container {
   margin-top: 102px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 .swiper-btn-subbox {
   display: flex;
