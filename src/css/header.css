@@ -1,8 +1,16 @@
 /* Styles for Mobile devices */
-.container {
-  height: 64px;
+body.menu-open {
+  overflow: hidden;
 }
+.header-menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .header-container {
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,16 +21,21 @@
 .header-nav-link {
   font-size: 16px;
   line-height: 1.5;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-nav-link:hover,
+.header-nav-link:focus {
+  opacity: 0.2;
 }
 .icon-logo {
   fill: #010100;
+  width: 84px;
+  height: 36px;
 }
-.burger-btn {
-  background-color: transparent;
-
+.header-burger-btn {
   border: none;
 }
-.burger-icon {
+.header-burger-icon {
   fill: #010100;
 }
 
@@ -48,22 +61,21 @@
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
-  .container {
-    height: 72px;
-  }
   .header-container {
-    display: flex;
-    width: 704px;
+    height: 72px;
 
-    justify-content: space-between;
-    align-items: center;
+    width: 704px;
   }
   .header-nav-list {
     display: flex;
     gap: 32px;
   }
-  .burger-btn {
+  .header-burger-btn {
     display: none;
+  }
+  .icon-logo {
+    width: 80px;
+    height: 40px;
   }
 }
 /* Styles for Desktop devices */
