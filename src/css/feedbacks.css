@@ -75,12 +75,12 @@
   margin-right: 0 !important;
 }
 
-.swiper-container {
+/* .swiper-container {
   margin-top: 102px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 .swiper-btn-subbox {
   display: flex;
