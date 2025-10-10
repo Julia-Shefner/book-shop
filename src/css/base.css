@@ -150,8 +150,7 @@ html {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-.btn-arrow-icon {       
+.btn-arrow-icon {
   fill: none;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -172,7 +171,11 @@ html {
   background-color: #5a2502;
 }
 
-.btn-arrow:disabled {
+.btn-arrow:active .btn-arrow-icon {
+  fill: none;
+}
+
+.btn-arrow:active .btn-arrow:disabled {
   border: 1px solid rgba(11, 5, 0, 0.15);
   background-color: #e15d05;
   opacity: 0.2;
