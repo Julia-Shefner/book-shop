@@ -6,7 +6,7 @@ import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 let eventsSwiper;
 
 function swiperInit() {
-  if (window.innerWidth < 1440) {
+  if (window.innerWidth < 1440 && !eventsSwiper) {
     eventsSwiper = new Swiper('.events-swiper', {
       modules: [Navigation, Pagination, Keyboard],
       pagination: {
@@ -22,14 +22,15 @@ function swiperInit() {
         onlyInViewport: true,
       },
       breakpoints: {
-        375: { slidesPerView: 1 },
+        375: { slidesPerView: 1, spaceBetween: 20 },
         768: { slidesPerView: 2, spaceBetween: 24 },
       },
     });
-  } else {
+  } else if (window.innerWidth >= 1440 && eventsSwiper) {
     eventsSwiper.destroy(true, true);
     eventsSwiper = null;
   }
 }
 
 swiperInit();
+window.addEventListener('resize', swiperInit);
