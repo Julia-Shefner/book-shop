@@ -19,3 +19,24 @@
   background-color: #41d1ff;
   transition: 200ms ease;
 }
+
+.footer-main {
+background: #ea8d50;
+}
+
+.footer-main {
+  padding: 80px 16px 80px 16px;
+}
+.footer-nav {
+  padding-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+}
