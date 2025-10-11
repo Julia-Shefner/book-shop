@@ -45,7 +45,7 @@
 .book-title {
   /* Обмеження тексту в межах блоку */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -325,7 +325,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
+  .book-title {
+    /* Обмеження тексту в межах блоку */
+    -webkit-line-clamp: 1;
+  }
   .books-list {
     width: 100%;
     display: grid;
