@@ -8,12 +8,14 @@ burgerBtn.addEventListener('click', clickBurgerBtn);
 function clickBurgerBtn() {
   menu.classList.add('active');
   body.classList.add('menu-open');
+  window.addEventListener('keydown', onEscPress);
 }
 
 closeBtn.addEventListener('click', clickCloseBtn);
 function clickCloseBtn() {
   menu.classList.remove('active');
   body.classList.remove('menu-open');
+  window.removeEventListener('keydown', onEscPress);
 }
 navList.forEach(link => {
   link.addEventListener('click', () => {
@@ -21,3 +23,9 @@ navList.forEach(link => {
     body.classList.remove('menu-open');
   });
 });
+
+function onEscPress(event) {
+  if (event.key === 'Escape' || event.code === 'Escape') {
+    clickCloseBtn();
+  }
+}
