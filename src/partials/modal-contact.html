@@ -1,0 +1,49 @@
+<div class="contact-modal-overlay is-open">
+  <div class="contact-modal">
+    <button type="button" class="close-btn">
+      <svg class="close-icon" width="8" height="8">
+        <use href="./img/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-title">Register</h2>
+    <p class="modal-paragraph"></p>
+    <form name="client-form" autocomplete="on" novalidate>
+      <div class="form-input">
+        <label class="contact-label" for="user-name">Name*</label>
+
+        <input
+          type="text"
+          class="contact-input"
+          name="user-name"
+          id="user-name"
+          required
+          placeholder="Ann"
+        />
+      </div>
+
+      <div class="form-input">
+        <label class="contact-label" for="user-email">Email*</label>
+
+        <input
+          type="email"
+          class="contact-input"
+          name="user_email"
+          id="user-email"
+          required
+          placeholder="hello@booksy.com"
+        />
+      </div>
+      <div class="textarea">
+        <label class="contact-label" for="user-comment">Comment </label>
+        <textarea
+          class="contact-textarea"
+          name="user-comment"
+          id="user-comment"
+          placeholder=" your message..."
+        ></textarea>
+      </div>
+
+      <button class="send-btn" type="submit">Register</button>
+    </form>
+  </div>
+</div>
