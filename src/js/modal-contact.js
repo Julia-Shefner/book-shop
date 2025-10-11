@@ -1,13 +1,39 @@
 const form = document.querySelector('.contact-form');
+
 const eventsBtn = document.querySelector('.events-btn');
 const modal = document.querySelector('.contact-modal-overlay');
 const body = document.body;
+const closeBtn = document.querySelector('.close-btn');
+
+//  Backdrop click
+modal.addEventListener('click', onBackdropClick);
+function onBackdropClick(event) {
+  if (event.target === modal) {
+    closeContactModal();
+  }
+}
+// Open window logic
 eventsBtn.addEventListener('click', openContactModal);
 function openContactModal() {
   menu.classList.add('is-open');
   body.classList.add('menu-open');
   window.addEventListener('keydown', onEscPress);
 }
+// Close window logic
+closeBtn.addEventListener('click', closeContactModal);
+function closeContactModal() {
+  menu.classList.remove('is-open');
+  body.classList.remove('menu-open');
+  window.removeEventListener('keydown', onEscPress);
+  modal.removeEventListener('click', onBackdropClick);
+}
+// keyboard event
+function onEscPress(event) {
+  if (event.key === 'Escape' || event.code === 'Escape') {
+    clickCloseBtn();
+  }
+}
+// Submit logic
 form.addEventListener('submit', handlerSubmit);
 function handlerSubmit(event) {
   event.preventDefault();
