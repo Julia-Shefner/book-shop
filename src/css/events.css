@@ -1,0 +1,72 @@
+.section-events {
+  padding: 64px 0px;
+}
+
+/* Texts styles */
+.events-text-main {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.section-title.events-title {
+  margin-bottom: 16px;
+}
+
+.events-main-text {
+  margin-bottom: 32px;
+}
+
+.events-subtitle {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.events-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.events-text-info {
+  margin-bottom: 8px;
+}
+
+.events-text-description {
+  margin-bottom: 24px;
+}
+
+/* Image styles */
+
+.events-image {
+  border-radius: 16px;
+  width: 342px;
+  height: 277px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+/* Register button */
+
+.events-btn {
+  width: 94px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.events-btn-icon-cover {
+  width: 24px;
+  height: 24px;
+}
+
+.events-list-item {
+  margin-bottom: 56px;
+}
