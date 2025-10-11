@@ -83,6 +83,10 @@ input:focus::placeholder,
 .contact-textarea:focus::placeholder {
   opacity: 0;
 }
+input:focus,
+.contact-textarea:focus {
+  border: 1px solid rgba(11, 5, 0, 0.6);
+}
 
 .form-input {
   margin-bottom: 8px;
@@ -129,4 +133,17 @@ input:focus::placeholder,
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
+}
+.contact-input.error {
+  border-color: red;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+
+.error-message.show {
+  display: block;
 }
