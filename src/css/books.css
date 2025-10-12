@@ -225,8 +225,23 @@
     align-items: center;
     column-gap: 16px;
   }
+
+  .select-wrapper {
+    position: relative;
+  }
+
   .categories-select {
     margin-left: 16px;
+    padding-right: 32px;
+    appearance: none;
+  }
+
+  .select-icon {
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
 
   .books-title {
@@ -301,6 +316,10 @@
     display: none;
   }
 
+  .select-icon {
+    display: none;
+  }
+
   .categories-list {
     display: flex;
     flex-direction: column;
@@ -336,10 +355,14 @@
     gap: 40px 24px;
   }
 
+  .categories-list li:first-child {
+    margin-bottom: -8px;
+  }
+
   .book-card {
     width: 227px;
     height: 439px;
-    border-radius: 8px;
+    border-radius: -8px;
     justify-content: space-between;
     overflow: hidden;
   }
