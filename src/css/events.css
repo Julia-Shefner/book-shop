@@ -117,18 +117,18 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .events-image {
-    width: 421px;
-  }
+  /* .events-image {
+    min-width: 421px;
+  } */
   .events-list-item {
-    max-width: 421px;
+    width: calc((100% - 48px) / 3);
+    /* width: 421px; */
   }
   .events-list {
     display: flex;
     flex-direction: row;
     column-gap: 24px;
   }
-  .swiper-pagination,
   .swiper-btn {
     display: none;
   }
