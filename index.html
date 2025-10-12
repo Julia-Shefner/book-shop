@@ -21,7 +21,7 @@
     <script type="module" crossorigin src="/book-shop/index.js"></script>
     <link rel="modulepreload" crossorigin href="/book-shop/assets/vendor-BOicE9ou.js">
     <link rel="stylesheet" crossorigin href="/book-shop/assets/vendor-zs9eEBws.css">
-    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-By5IVmab.css">
+    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-C3Sk5ptv.css">
   </head>
   <body>
     <header>
@@ -607,8 +607,8 @@
     aria-labelledby="book-title"
   >
     <button class="modal-close" id="close-modal" aria-label="Close modal">
-      <svg aria-hidden="true" width="20" height="20">
-        <use href="./images/sprite.svg#icon-close"></use>
+      <svg aria-hidden="true" width="16" height="16">
+        <use href="../img/icons.svg#icon-close"></use>
       </svg>
     </button>
     <div class="modal-content">
@@ -621,11 +621,18 @@
         <p id="book-price" class="book-price">$0</p>
 
         <div class="quantity-control">
-          <button type="button" id="decrease">−</button>
+          <button type="button" id="decrease">
+            <svg width="14" height="2">
+            <use href="../img/icons.svg#icon-minus"></use>
+          </svg></button>
           <div class="input-books">
             <input id="quantity" type="number" value="1" min="1" />
           </div>
-          <button type="button" id="increase">+</button>
+          <button type="button" id="increase">
+            <svg width="14" height="14">
+            <use href="../img/icons.svg#icon-plus"></use>
+          </svg>
+        </button>
         </div>
 
         <div class="btn-group">
@@ -637,38 +644,47 @@
           </form>
         </div>
 
-        <div class="accordion-container js-accordion" id="accordion">
-          <div class="ac">
+        <ul class="accordion-container js-accordion" id="accordion">
+          <li class="ac">
             <h2 class="ac-header">
               <button class="ac-trigger" type="button">
-                <span>Details</span>
+                <span class="accordion-items">Details</span>
+                <svg class="ac-icon" width="14" height="8" aria-hidden="true">
+                  <use href="../img/icons.svg#icon-down"></use>
+                </svg>
               </button>
             </h2>
             <div class="ac-panel">
               <p id="details">—</p>
             </div>
-          </div>
-          <div class="ac">
+          </li>
+          <li class="ac">
             <h2 class="ac-header">
               <button class="ac-trigger" type="button">
-                <span>Shipping</span>
+                <span class="accordion-items">Shipping</span>
+                <svg class="ac-icon" width="14" height="8" aria-hidden="true">
+                  <use href="../img/icons.svg#icon-down"></use>
+                </svg>
               </button>
             </h2>
             <div class="ac-panel">
               <p id="shipping">—</p>
             </div>
-          </div>
-          <div class="ac">
+          </li>
+          <li class="ac">
             <h2 class="ac-header">
               <button class="ac-trigger" type="button">
-                <span>Returns</span>
+                <span class="accordion-items">Returns</span>
+                <svg class="ac-icon" width="14" height="8" aria-hidden="true">
+                  <use href="../img/icons.svg#icon-down"></use>
+                </svg>
               </button>
             </h2>
             <div class="ac-panel">
               <p id="returns">—</p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
