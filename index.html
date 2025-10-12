@@ -19,9 +19,9 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/book-shop/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/book-shop/assets/vendor-CsU9es7_.js">
-    <link rel="stylesheet" crossorigin href="/book-shop/assets/vendor-jFgW5j3Y.css">
-    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-CtP_z3_I.css">
+    <link rel="modulepreload" crossorigin href="/book-shop/assets/vendor-D8K-ZL8z.js">
+    <link rel="stylesheet" crossorigin href="/book-shop/assets/vendor-C1NeuIVz.css">
+    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-D2suvCz-.css">
   </head>
   <body>
     <header>
@@ -87,14 +87,36 @@
 
     <main>
       
-      
+      <section class="books-section">
+  <div class="books-header">
+    <div class="books-header-row">
+      <h2 class="books-title">Books</h2>
+      <p class="books-count" id="booksCount"></p>
+    </div>
+    <div class="select-wrapper">
+      <select id="categorySelect" class="categories-select"></select>
+
+      <ul id="categoriesList" class="categories-list">
+        <li class="category-item" data-category="all">All categories</li>
+      </ul>
+      <svg class="select-icon">
+        <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-down"></use>
+      </svg>
+    </div>
+  </div>
+
+  <div class="books-content">
+    <ul id="booksList" class="books-list"></ul>
+    <button id="showMoreBtn" class="show-more-btn">Show More</button>
+  </div>
+</section>
 
       <!-- ----------------feedbacks section---------------- -->
-<section id="feedback" class="feedback">
-  <div class="containers">
+<section id="feedbacks" class="feedback">
+  <div class="container">
     <div class="feedback-textbox">
-      <h2 class="feedback-title">Customer Feedbacks</h2>
-      <p class="section-text">See what our readers are saying about us!</p>
+      <h2 class="section-title">Customer Feedbacks</h2>
+      <p class="feedback-text">See what our readers are saying about us!</p>
     </div>
     <div class="swiper feedback-swiper">
       <ul class="feedback-list swiper-wrapper">
@@ -107,7 +129,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/Jane Doe2.jpg"
+              src="data:image/jpeg;base64,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"
               alt="John Doe"
               class="feedback-item-userimg"
               width="48"
@@ -129,7 +151,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/John Smith2.jpg"
+              src="data:image/jpeg;base64,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"
               alt="John Smith"
               class="feedback-item-userimg"
               width="48"
@@ -151,7 +173,7 @@
           </div>
           <div class="feedback-item-avatar">
             <img
-              src="../img/feedbacks/Emily Johnson2.jpg"
+              src="data:image/jpeg;base64,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"
               alt="Emily Johnson"
               class="feedback-item-userimg"
               width="48"
@@ -163,15 +185,93 @@
             </div>
           </div>
         </li>
+
         <li class="feedback-item swiper-slide">
-          <p class="feedback-descr">"Fast delivery and good quality."</p>
-          <p class="feedback-name">— Emily Davis</p>
+          <div class="feedback-item-content">
+            <p class="feedback-item-text">
+              Thank you for the books! I liked the fast shipping and the quality
+              of the books. The children really liked them!
+            </p>
+          </div>
+          <div class="feedback-item-avatar">
+            <img
+              src="/book-shop/assets/mark2mb-DifWikbj.jpg"
+              alt="Mark Guerrero"
+              class="feedback-item-userimg"
+              width="48"
+              height="48"
+            />
+            <div class="feedback-item-info">
+              <h3 class="feedback-item-username">Mark Guerrero</h3>
+              <p class="feedback-item-userrole">Book Lover, Reader</p>
+            </div>
+          </div>
         </li>
+
         <li class="feedback-item swiper-slide">
-          <p class="feedback-descr">
-            "I will recommend this shop to my friends."
-          </p>
-          <p class="feedback-name">— Chris Wilson</p>
+          <div class="feedback-item-content">
+            <p class="feedback-item-text">
+              Great bookstore! I received my order very quickly and without any
+              questions. I will recommend this shop to my friends.
+            </p>
+          </div>
+          <div class="feedback-item-avatar">
+            <img
+              src="/book-shop/assets/tom2mb-DoVQ_7AP.jpg"
+              alt="Tom Ford"
+              class="feedback-item-userimg"
+              width="48"
+              height="48"
+            />
+            <div class="feedback-item-info">
+              <h3 class="feedback-item-username">Tom Ford</h3>
+              <p class="feedback-item-userrole">Book Lover, Reader</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feedback-item swiper-slide">
+          <div class="feedback-item-content">
+            <p class="feedback-item-text">
+              The bookstore has a cozy atmosphere, with a well-curated selection
+              and friendly staff who are always ready to help.
+            </p>
+          </div>
+          <div class="feedback-item-avatar">
+            <img
+              src="/book-shop/assets/camila2mb-CfCzrnDa.jpg"
+              alt="Camila Garcia"
+              class="feedback-item-userimg"
+              width="48"
+              height="48"
+            />
+            <div class="feedback-item-info">
+              <h3 class="feedback-item-username">Camila Garcia</h3>
+              <p class="feedback-item-userrole">Book Lover, Reader</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feedback-item swiper-slide">
+          <div class="feedback-item-content">
+            <p class="feedback-item-text">
+              A delightful place to browse, featuring quiet reading corners and
+              occasional author events.
+            </p>
+          </div>
+          <div class="feedback-item-avatar">
+            <img
+              src="/book-shop/assets/daniel2mb-CEw8Gozr.jpg"
+              alt="Daniel Wilson"
+              class="feedback-item-userimg"
+              width="48"
+              height="48"
+            />
+            <div class="feedback-item-info">
+              <h3 class="feedback-item-username">Daniel Wilson</h3>
+              <p class="feedback-item-userrole">Editor, BookMag</p>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -180,15 +280,152 @@
         <!-- пагінація -->
         <div class="swiper-pagination"></div>
         <div class="swiper-btn-subbox">
-          <button class="btn-orange swiper-button-prev"></button>
-          <button class="btn-orange swiper-button-next"></button>
+          <button class="btn-arrow swiper-button-prev">
+            <svg
+              class="btn-arrow-icon swiper-svg-button-prev"
+              width="14"
+              height="14"
+            >
+              <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+          <button class="btn-arrow swiper-button-next">
+            <svg
+              class="btn-arrow-icon swiper-svg-button-next"
+              width="14"
+              height="14"
+            >
+              <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-      
+      <section class="section-events" id="events">
+  <div class="container">
+    <p class="events-text-main">Events</p>
+    <h2 class="section-title events-title">Upcoming Events at Booksy</h2>
+    <p class="main-text events-main-text">
+      Discover readings, workshops, and bookish gatherings — online and offline.
+      Everyone’s welcome.
+    </p>
+    <div class="swiper events-swiper">
+      <ul class="swiper-wrapper events-list">
+        <li class="swiper-slide events-list-item">
+          <img
+            class="events-image"
+            src="/book-shop/assets/event-first-2x-BNoh2E7F.jpg"
+            srcset="/book-shop/assets/event-first-2x-BNoh2E7F.jpg 1x, /book-shop/assets/event-first-2x-BNoh2E7F.jpg 2x"
+            alt="Four people reading together in a cozy library with warm light"
+            width="421"
+            height="277"
+          />
+          <div class="event-info-wrraper">
+            <div class="events-info">
+              <h3 class="events-subtitle">
+                Cozy Book Club — “The Midnight Library”
+              </h3>
+              <p class="events-text events-text-info">
+                In-store | June 5, 6:30 PM
+              </p>
+              <p class="events-text events-text-description">
+                Join us for an evening of tea, thoughtful conversation, and
+                shared reflections as we dive into Matt Haig’s bestseller.
+              </p>
+            </div>
+            <button type="button" class="events-btn">
+              Register
+              <span class="events-btn-icon-cover">
+                <svg class="events-btn-icon" width="8" height="12">
+                  <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-right"></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </li>
+        <li class="swiper-slide events-list-item">
+          <img
+            class="events-image"
+            src="/book-shop/assets/events-second-1x-DHhjElbv.jpg"
+            srcset="/book-shop/assets/events-second-1x-DHhjElbv.jpg 1x, /book-shop/assets/events-second-2x-D52MPlzH.jpg 2x"
+            alt="A creative studio space with a group of people working on book cover sketches and laptop mockups, art supplies on the table, moodboards on the wall, modern and minimal setting with bright daylight"
+            width="421"
+            height="277"
+          />
+          <div class="event-info-wrraper">
+            <div class="event-info">
+              <h3 class="events-subtitle">Book Cover Design Workshop</h3>
+              <p class="events-text events-text-info">
+                Online | June 12, 7:00 PM
+              </p>
+              <p class="events-text events-text-description">
+                A hands-on session for aspiring designers and curious readers.
+                Learn what makes a cover stand out — from concept to print.
+              </p>
+            </div>
+            <button type="button" class="events-btn">
+              Register
+              <span class="events-btn-icon-cover">
+                <svg class="events-btn-icon" width="8" height="12">
+                  <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-right"></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </li>
+        <li class="swiper-slide events-list-item">
+          <img
+            class="events-image"
+            src="/book-shop/assets/events-third-1x-fJDezQEh.jpg"
+            srcset="/book-shop/assets/events-third-1x-fJDezQEh.jpg 1x, /book-shop/assets/events-third-2x-2W0ag38E.jpg 2x"
+            alt="A cheerful reading corner in a bookstore, a group of young children sitting on colorful cushions, listening to a storyteller reading a picture book. Wooden shelves filled with kids’ books, warm lighting, playful and joyful vibe"
+            width="421"
+            height="277"
+          />
+          <div class="event-info-wrraper">
+            <div class="event-info">
+              <h3 class="events-subtitle">Children’s Story Hour</h3>
+              <p class="events-text events-text-info">
+                In-store | June 15, 11:00 AM
+              </p>
+              <p class="events-text events-text-description">
+                A magical morning of stories, games, and imagination for our
+                youngest book lovers (ages 4–8).
+              </p>
+            </div>
+            <button type="button" class="events-btn">
+              Register
+              <span class="events-btn-icon-cover">
+                <svg class="events-btn-icon" width="8" height="12">
+                  <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-right"></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div class="swiper-pagination-box">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-btn">
+          <button type="button" class="btn-arrow swiper-button-prev">
+            <svg class="btn-arrow-icon" width="14" height="14">
+              <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+          <button type="button" class="btn-arrow swiper-button-next">
+            <svg class="btn-arrow-icon" width="14" height="14">
+              <use href="../img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       <section class="article">
   <div class="container article-container">
     <div class="article-wrapper-text">
@@ -225,112 +462,152 @@
   </div>
 </section>
 
-      <section class="location">
+      <section class="location" id="location">
   <div class="container">
-    <p class="location__subtitle">Location</p>
-    <h2 class="location__title">How to find us</h2>
-    <p class="location__text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-      varius enim in eros elementum tristique.
-    </p>
+    <div class="location-top">
+      <div class="location-container">
+        <p class="location-subtitle">Location</p>
+        <h2 class="section-title location-title">How to find us</h2>
+        <p class="main-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique.
+        </p>
+      </div>
 
-    <ul class="contacts">
-      <li class="contacts__item">
-        <svg class="contacts__icon" width="24" height="24">
-          <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-email"></use>
-        </svg>
-        <div class="contacts__info">
-          <p class="contacts__label">Email</p>
-          <a href="mailto:hello@booksy.com" class="contacts__link"
-            >hello@booksy.com</a
-          >
-        </div>
-      </li>
+      <ul class="location-contacts">
+        <li class="location-contacts-item">
+          <svg class="location-contacts-icon" width="20" height="17">
+            <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-email"></use>
+          </svg>
+          <div class="location-contacts-info">
+            <p class="location-contacts-text">Email</p>
+            <a href="mailto:hello@booksy.com" class="location-contacts-link"
+              >hello@booksy.com</a
+            >
+          </div>
+        </li>
 
-      <li class="contacts__item">
-        <svg class="contacts__icon" width="24" height="24">
-          <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-phone"></use>
-        </svg>
+        <li class="location-contacts-item">
+          <svg class="location-contacts-icon" width="19" height="20">
+            <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-phone"></use>
+          </svg>
 
-        <div class="contacts__info">
-          <p class="contacts__label">Phone</p>
-          <a href="tel:+612413043012" class="contacts__link"
-            >+61 (241) 304-3012</a
-          >
-        </div>
-      </li>
+          <div class="location-contacts-info">
+            <p class="location-contacts-text">Phone</p>
+            <a href="tel:+612413043012" class="location-contacts-link"
+              >+61 (241) 304-3012</a
+            >
+          </div>
+        </li>
 
-      <li class="contacts__item">
-        <svg class="contacts__icon" width="24" height="24">
-          <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-location"></use>
-        </svg>
-        <div class="contacts__info">
-          <p class="contacts__label">Office</p>
-          <address class="contacts__address">
-            123 Books St, Sydney NSW 2000 AU
-          </address>
-        </div>
-      </li>
-    </ul>
-
-    <div class="map"></div>
+        <li class="location-contacts-item">
+          <svg class="location-contacts-icon" width="16" height="21">
+            <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-location"></use>
+          </svg>
+          <div class="location-contacts-info">
+            <p class="location-contacts-text">Office</p>
+            <address class="location-contacts-address">
+              123 Books St, Sydney NSW 2000 AU
+            </address>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.261848909057!2d151.7071791!3d-32.9176794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b73155e3e7420dd%3A0x8a563884360e3fd0!2s123%20Books!5e0!3m2!1suk!2sge!4v1760025999011!5m2!1suk!2sge"
+        width="343"
+        height="395"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   </div>
 </section>
 
-      
-
-      <div class="contact-modal-overlay">
-  <div class="contact-modal">
-    <button type="button" class="close-btn">
-      <svg class="close-icon" width="8" height="8">
-        <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-close"></use>
+      <!-- ===== MODAL ===== -->
+<div
+  id="modal-backdrop"
+  class="backdrop container is-hidden"
+  aria-hidden="true"
+>
+  <div
+    class="book-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="book-title"
+  >
+    <button class="modal-close" id="close-modal" aria-label="Close modal">
+      <svg aria-hidden="true" width="20" height="20">
+        <use href="./images/sprite.svg#icon-close"></use>
       </svg>
     </button>
-    <h2 class="modal-title">Register</h2>
-    <p class="modal-paragraph"></p>
-    <form class="contact-form" name="client-form" autocomplete="on" novalidate>
-      <div class="form-input">
-        <label class="contact-label" for="user-name">Name*</label>
-
-        <input
-          type="text"
-          class="contact-input"
-          name="name"
-          id="user-name"
-          required
-          placeholder="Ann"
-        />
-        <p class="error-message"></p>
+    <div class="modal-content">
+      <div class="modal-image-wrap">
+        <img id="book-image" class="book-image" src="" alt="Book cover" />
       </div>
+      <div class="book-details">
+        <h2 id="book-title" class="book-title">Title</h2>
+        <p id="book-author" class="book-author">Author</p>
+        <p id="book-price" class="book-price">$0</p>
 
-      <div class="form-input">
-        <label class="contact-label" for="user-email">Email*</label>
+        <div class="quantity-control">
+          <button type="button" id="decrease">−</button>
+          <div class="input-books">
+            <input id="quantity" type="number" value="1" min="1" />
+          </div>
+          <button type="button" id="increase">+</button>
+        </div>
 
-        <input
-          type="email"
-          class="contact-input"
-          name="email"
-          id="user-email"
-          required
-          placeholder="hello@booksy.com"
-        />
-        <p class="error-message"></p>
+        <div class="btn-group">
+          <button id="add-to-cart" class="btn add" type="button">
+            Add To Cart
+          </button>
+          <form id="buy-form" onsubmit="return false;">
+            <button id="buy-now" class="btn buy" type="submit">Buy Now</button>
+          </form>
+        </div>
+
+        <div class="accordion-container js-accordion" id="accordion">
+          <div class="ac">
+            <h2 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Details</span>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p id="details">—</p>
+            </div>
+          </div>
+          <div class="ac">
+            <h2 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Shipping</span>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p id="shipping">—</p>
+            </div>
+          </div>
+          <div class="ac">
+            <h2 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Returns</span>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p id="returns">—</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="contact-textarea-wrapper">
-        <label class="contact-label" for="user-comment">Comment </label>
-        <textarea
-          class="contact-textarea"
-          name="user-comment"
-          id="user-comment"
-          placeholder=" your message..."
-        ></textarea>
-      </div>
-
-      <button class="send-btn" type="submit">Register</button>
-    </form>
+    </div>
   </div>
 </div>
 
+      
     </main>
 
     
