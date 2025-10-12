@@ -92,6 +92,10 @@ function renderBooks() {
     visibleCount < filteredBooks.length ? 'block' : 'none';
 }
 
+showMoreBtn.addEventListener('click', () => {
+  showMoreBtn.blur();
+});
+
 // Фільтрація
 function filterByCategory(category) {
   visibleCount = 0;
@@ -134,11 +138,9 @@ customSelectOptions.addEventListener('click', e => {
 categoriesList.addEventListener('click', e => {
   if (e.target.tagName === 'LI') {
     const selected = e.target.getAttribute('data-category');
-    document
-      .querySelectorAll('.categories-list li')
-      .forEach(li => li.classList.remove('active'));
-    e.target.classList.add('active');
     filterByCategory(selected);
+    e.target.classList.add('pressed');
+    setTimeout(() => e.target.classList.remove('pressed'), 150);
   }
 });
 
