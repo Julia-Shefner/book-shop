@@ -12,7 +12,7 @@ let visibleCount = 0;
 // Динамічні налаштування
 function getChunkSize() {
   if (window.innerWidth >= 768) return 24; // таблет / десктоп
-  return 10; // мобілка
+  return 10; // мобідка
 }
 function getLoadStep() {
   return 4;
@@ -54,15 +54,6 @@ function fillCategories(categories) {
     categoriesList.innerHTML = categories
       .map(c => `<li data-category="${c}">${c}</li>`)
       .join('');
-
-    // ✅ Додаємо "All categories" першим, якщо його ще немає
-    if (!categoriesList.querySelector('[data-category="all"]')) {
-      const allItem = document.createElement('li');
-      allItem.classList.add('category-item');
-      allItem.dataset.category = 'all';
-      allItem.textContent = 'All categories';
-      categoriesList.prepend(allItem);
-    }
   }
 }
 
@@ -103,7 +94,7 @@ showMoreBtn.addEventListener('click', renderBooks);
 // Фільтрація
 function filterByCategory(category) {
   visibleCount = 0;
-  if (!category || category === 'all') {
+  if (!category) {
     filteredBooks = [...allBooks];
     renderBooks();
     return;

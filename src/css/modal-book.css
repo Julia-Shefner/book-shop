@@ -1,0 +1,281 @@
+/* ===========================
+   MODAL STYLES (ISOLATED)
+   =========================== */
+
+/* BACKDROP */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* MODAL */
+.book-modal {
+  background: var(--bg-color);
+  border-radius: 16px;
+  padding: 64px 16px;
+  min-width: 300px;
+  width: 90%;
+  position: relative;
+  overflow-y: auto;
+  max-height: 95vh;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-modal .modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.book-modal .modal-close svg {
+  stroke: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.book-modal .modal-close:hover svg {
+  transform: rotate(90deg);
+}
+
+/* CONTENT */
+.book-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.book-modal .modal-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.book-modal .modal-image-wrap img {
+  width: 309px;
+  height: 468px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-modal .book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* TEXT */
+.book-modal .book-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-color);
+  padding-bottom: 8px;
+}
+
+.book-modal .book-author {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+  color: var(--text-color);
+  padding-bottom: 8px;
+}
+
+.book-modal .book-price {
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text-color);
+  padding-bottom: 24px;
+}
+
+/* QUANTITY */
+.book-modal .quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+.book-modal .quantity-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  width: 32px;
+  height: 40px;
+  font-size: 18px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  cursor: pointer;
+}
+
+.book-modal .quantity-control button:hover {
+  background: rgba(11, 5, 0, 0.1);
+}
+
+.book-modal .input-books {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 42px;
+  height: 40px;
+  background: rgba(11, 5, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-modal .input-books input[type='number'] {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-color);
+  outline: none;
+}
+
+/* BUTTONS */
+.book-modal .btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.book-modal .btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  width: 100%;
+  height: 48px;
+}
+
+.book-modal .btn.add {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: #fff;
+}
+
+.book-modal .btn.add:hover {
+  background: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.book-modal .btn.buy {
+  background: var(--bg-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.book-modal .btn.buy:hover {
+  background: var(--accent-color);
+  border-color: var(--text-color);
+  color: #fff;
+}
+
+/* ACCORDION */
+.book-modal .ac-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.book-modal .ac-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.book-modal .ac-trigger::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.book-modal .ac.is-active .ac-trigger::after {
+  transform: rotate(180deg);
+}
+
+.book-modal .ac-panel {
+  padding-left: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* MEDIA (TABLET) */
+@media (min-width: 768px) {
+  .backdrop {
+    padding: 120px 32px;
+  }
+
+  .book-modal {
+    padding: 64px 32px;
+    width: 704px;
+  }
+
+  .book-modal .modal-content {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .book-modal .modal-image-wrap {
+    flex: 0 0 309px;
+  }
+
+  .book-modal .book-details {
+    flex: 1;
+  }
+
+  .book-modal .btn-group {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .book-modal #buy-form,
+  .book-modal .btn.add,
+  .book-modal .btn.buy {
+    width: 309px;
+  }
+}
+
+/* MEDIA (DESKTOP) */
+@media (min-width: 1440px) {
+  .backdrop {
+    padding: 64px 70px;
+  }
+
+  .book-modal {
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+
+  .book-modal .btn-group {
+    justify-content: flex-start;
+  }
+}
