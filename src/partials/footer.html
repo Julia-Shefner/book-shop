@@ -1,18 +1,29 @@
 <footer class="footer-main container">
+<div class="footer-logo">
+  <a href="../index.html">
+   <svg class="svg" width="83" height="21">
+     <use href="../img/icons.svg#icon-logo"></use>
+   </svg> 
+  </a>
+</div>
+
+
   <div class="footer-nav">
-    <h2></h2>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="./books.html">Books</a></li>
-      <li><a href="./feedbacks.html">Feedback</a></li>
-      <li><a href="./location.html">Location</a></li>
+    <ul class="footer-list">
+      <li class="footer-item"><a class="footer-link" href="#">Home</a></li>
+      <li class="footer-item"><a class="footer-link" href="./books.html">Books</a></li>
+      <li class="footer-item"><a class="footer-link" href="./feedbacks.html">Feedback</a></li>
+      <li class="footer-item"><a class="footer-link" href="../location.html">Location</a></li>
     </ul>
   </div>
   
   <form class="form" action="#" method="POST">
-    <label for="user-email">Join</label>
+    
     <div class="form-group">
+      <label class="footer-label" for="user-email">Join</label>
+      <div class="input-row">
     <input 
+      class="footer-input"
       type="email" 
       name="email" 
       placeholder="Enter your email" 
@@ -20,12 +31,15 @@
       required
     >
     
-    <button class="" type="submit">Sign Up</button>   
-    </div>
+    <button class="btn-transparent footer-button" value="Subscribe" type="submit">Sign Up</button> 
+    </div>  
+    
     <small class="required-text">* Required field</small>
+    </div>
   </form>
-  
-  <p>© 2025 Booksy. All rights reserved.</p>
+  <div class="footer-copy">
+  <p class="copyright-text">© 2025 Booksy. All rights reserved.</p>
+  </div>
 </footer>
 
 
