@@ -1,10 +1,10 @@
 import Swiper from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 new Swiper(".feedback-swiper", {
-  modules: [Navigation, Pagination, Keyboard],
+  modules: [Navigation, Pagination],
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -12,10 +12,6 @@ new Swiper(".feedback-swiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
-  },
-  keyboard: {
-    enabled: true,         // Увімкнути керування з клавіатури
-    onlyInViewport: true,  // Працює лише коли слайдер у полі зору
   },
   grabCursor: true,
   breakpoints: {

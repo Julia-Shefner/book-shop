@@ -98,6 +98,8 @@ body.menu-open {
 @media only screen and (min-width: 768px) {
   .header-container {
     height: 72px;
+
+    width: 704px;
   }
   .header-nav-list {
     display: flex;
@@ -118,4 +120,7 @@ body.menu-open {
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
+  .header-container {
+    width: 1312px;
+  }
 }
