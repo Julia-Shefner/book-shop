@@ -1,0 +1,194 @@
+/* ==== HERO SECTION ==== */
+.hero {
+    position: relative;
+    padding: 0 16px 32px 16px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* ==== SLIDER ==== */
+.hero-slider {
+    position: relative;
+    /* width: 100%; */
+    overflow: hidden;
+    min-width: 343px;
+    min-height: 199px;
+}
+
+.hero-slider ul {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    list-style: none;
+    width: 100%;
+}
+
+.swiper-slide {
+    flex: 0 0 100%;
+    position: relative;
+    width: 100%;
+}
+
+.swiper-wrapper {}
+
+.hero-slider picture,
+.hero-slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ==== SLIDE TEXT ==== */
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    color: #fff;
+    text-align: left;
+}
+
+.slide-text h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    max-width: 172px;
+}
+
+.slide-text a {
+    display: inline-block;
+    border: 0.52px solid #e95c0c;
+    border-radius: 2px;
+    padding: 4px 10px;
+    width: 117px;
+    height: 20px;
+    background-color: #e95c0c;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+}
+
+/* ==== SLIDER NAVIGATION ==== */
+.slider-nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.slider-button {
+    background-color: #e95c0c;
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.slider-button:hover:not(:disabled) {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.slider-button:disabled {
+    background-color: #d3c8bf;
+    cursor: not-allowed;
+}
+
+/* ==== HERO TITLE ==== */
+.hero h1 {
+    text-align: left;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-top: 24px;
+    color: #0b0500;
+}
+
+/* ==== MEDIA QUERIES ==== */
+
+/* ===== Tablet (≥768px) ===== */
+@media (min-width: 768px) {
+    .hero {
+        padding: 0 32px 32px 32px;
+        text-align: left;
+    }
+
+    /* .swiper-wrapper {
+        padding: 32px 40px;
+    } */
+
+    .hero-slider picture,
+    .hero-slider img {
+        border-radius: 0;
+    }
+
+    .slide-text h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        max-width: 274px;
+    }
+
+    .slide-text a {
+        display: inline-block;
+        border: 1px solid #e95c0c;
+        border-radius: 4px;
+        padding: 4px 20px;
+        width: 164px;
+        height: 32px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-top: 32px;
+    }
+
+    .slider-nav {
+        justify-content: flex-end;
+        margin-top: -56px;
+        /* aligns arrows beside the heading */
+        margin-right: 32px;
+    }
+
+    .slider-button {
+        font-size: 24px;
+        padding: 14px 18px;
+    }
+}
+
+/* ===== Desktop (≥1024px) ===== */
+@media (min-width: 1024px) {
+    .hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 40px 72px;
+    }
+
+    .slide-text {
+        bottom: 72px;
+        left: 64px;
+        max-width: 45%;
+    }
+
+    .slide-text h2 {
+        font-size: 26px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .slider-nav {
+        margin-top: 24px;
+    }
+}
