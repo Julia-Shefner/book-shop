@@ -46,6 +46,10 @@
   border-radius: 100%;
 }
 
+.swiper-button-next {
+  margin-left: 16px;
+}
+
 .swiper-svg-button-prev,
 .swiper-svg-button-next {
   fill: #ffffff;
