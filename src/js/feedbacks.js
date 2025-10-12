@@ -10,8 +10,8 @@ new Swiper(".feedback-swiper", {
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-nex",
+    prevEl: ".swiper-button-pre",
   },
   keyboard: {
     enabled: true,         // Увімкнути керування з клавіатури
