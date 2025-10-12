@@ -4,8 +4,11 @@ const API_BASE = 'https://books-backend.p.goit.global/books';
 const booksList = document.getElementById('booksList');
 const showMoreBtn = document.getElementById('showMoreBtn');
 const booksCount = document.getElementById('booksCount');
-const categorySelect = document.getElementById('categorySelect');
 const categoriesList = document.getElementById('categoriesList');
+const customSelect = document.getElementById('customSelect');
+const customSelectBtn = document.getElementById('customSelectBtn');
+const customSelectText = document.querySelector('.custom-select-text');
+const customSelectOptions = document.getElementById('customSelectOptions');
 
 let allBooks = [];
 let filteredBooks = [];
@@ -13,8 +16,8 @@ let visibleCount = 0;
 
 // Динамічні налаштування
 function getChunkSize() {
-  if (window.innerWidth >= 768) return 24; // таблет / десктоп
-  return 10; // мобілка
+  if (window.innerWidth >= 768) return 24;
+  return 10;
 }
 function getLoadStep() {
   return 4;
@@ -39,30 +42,22 @@ async function fetchBooks() {
   }
 }
 
-// Заповнення селекту та списку
+// Заповнення категорій
 function fillCategories(categories) {
-  // селект (для мобілки/планшету)
-  if (categorySelect) {
-    categorySelect.innerHTML = `<option value="">All Categories</option>`;
-    categorySelect.innerHTML += categories
-      .map(c => `<option value="${c}">${c}</option>`)
-      .join('');
+  // ✅ кастомний селект
+  if (customSelectOptions) {
+    customSelectOptions.innerHTML = `
+      <li data-category="all">All categories</li>
+      ${categories.map(c => `<li data-category="${c}">${c}</li>`).join('')}
+    `;
   }
 
-  // список (для десктопу)
+  // ✅ список для десктопу
   if (categoriesList) {
-    categoriesList.innerHTML = categories
-      .map(c => `<li data-category="${c}">${c}</li>`)
-      .join('');
-
-
-    if (!categoriesList.querySelector('[data-category="all"]')) {
-      const allItem = document.createElement('li');
-      allItem.classList.add('category-item');
-      allItem.dataset.category = 'all';
-      allItem.textContent = 'All categories';
-      categoriesList.prepend(allItem);
-    }
+    categoriesList.innerHTML = `
+      <li data-category="all">All categories</li>
+      ${categories.map(c => `<li data-category="${c}">${c}</li>`).join('')}
+    `;
   }
 }
 
@@ -97,9 +92,6 @@ function renderBooks() {
     visibleCount < filteredBooks.length ? 'block' : 'none';
 }
 
-// Показати більше
-showMoreBtn.addEventListener('click', renderBooks);
-
 // Фільтрація
 function filterByCategory(category) {
   visibleCount = 0;
@@ -113,10 +105,9 @@ function filterByCategory(category) {
 
 async function fetchCategoryBooks(category) {
   try {
-    const { data } = await axios.get(
-      `${API_BASE}/category`,
-      { params: { category } }
-    );
+    const { data } = await axios.get(`${API_BASE}/category`, {
+      params: { category },
+    });
     filteredBooks = data;
     renderBooks();
   } catch (err) {
@@ -124,11 +115,22 @@ async function fetchCategoryBooks(category) {
   }
 }
 
-//  Обробники подій
-categorySelect.addEventListener('change', e => {
-  filterByCategory(e.target.value);
+// Обробники подій
+// ✅ селект
+customSelectBtn.addEventListener('click', () => {
+  customSelect.classList.toggle('open');
 });
 
+customSelectOptions.addEventListener('click', e => {
+  if (e.target.tagName === 'LI') {
+    const selected = e.target.getAttribute('data-category');
+    customSelectText.textContent = e.target.textContent;
+    customSelect.classList.remove('open');
+    filterByCategory(selected);
+  }
+});
+
+// ✅ список для десктопу
 categoriesList.addEventListener('click', e => {
   if (e.target.tagName === 'LI') {
     const selected = e.target.getAttribute('data-category');
@@ -139,6 +141,9 @@ categoriesList.addEventListener('click', e => {
     filterByCategory(selected);
   }
 });
+
+// Показати більше
+showMoreBtn.addEventListener('click', renderBooks);
 
 // Ініціалізація
 fetchBooks();
