@@ -3,6 +3,8 @@ const form = document.querySelector('.contact-form');
 const btnList = document.querySelector('.events-list');
 const modal = document.querySelector('.contact-modal-overlay');
 const body = document.body;
+const inputs = form.querySelectorAll('input');
+const errorMessages = form.querySelectorAll('.error-message');
 const closeBtn = document.querySelector('.close-btn');
 const modalTitle = document.querySelector('.modal-paragraph');
 
@@ -19,6 +21,11 @@ function openContactModal(event) {
   if (!eventsBtn) {
     return;
   }
+  inputs.forEach(input => input.classList.remove('error'));
+  errorMessages.forEach(msg => {
+    msg.textContent = '';
+    msg.classList.remove('show');
+  });
   const item = eventsBtn.closest('.events-list-item');
   const eventsTitle = item.querySelector('.events-subtitle').textContent;
   modalTitle.textContent = eventsTitle;
@@ -37,6 +44,9 @@ function onEscPress(event) {
 // Close window logic
 closeBtn.addEventListener('click', closeContactModal);
 function closeContactModal() {
+  inputs.forEach(input => {
+    input.value = '';
+  });
   modal.classList.remove('is-open');
   body.classList.remove('menu-open');
   window.removeEventListener('keydown', onEscPress);
@@ -50,8 +60,6 @@ function handlerSubmit(event) {
   const form = event.target;
   const name = form.elements.name.value.trim();
   const email = form.elements.email.value.trim();
-  const inputs = form.querySelectorAll('input');
-  const errorMessages = form.querySelectorAll('.error-message');
   let hasError = false;
   inputs.forEach(input => input.classList.remove('error'));
   errorMessages.forEach(msg => {
