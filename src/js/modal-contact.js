@@ -28,7 +28,12 @@ function openContactModal(event) {
 
   modal.addEventListener('click', onBackdropClick);
 }
-
+// keyboard event
+function onEscPress(event) {
+  if (event.key === 'Escape' || event.code === 'Escape') {
+    closeContactModal();
+  }
+}
 // Close window logic
 closeBtn.addEventListener('click', closeContactModal);
 function closeContactModal() {
@@ -37,12 +42,7 @@ function closeContactModal() {
   window.removeEventListener('keydown', onEscPress);
   modal.removeEventListener('click', onBackdropClick);
 }
-// keyboard event
-function onEscPress(event) {
-  if (event.key === 'Escape' || event.code === 'Escape') {
-    clickCloseBtn();
-  }
-}
+
 // Submit logic
 form.addEventListener('submit', handlerSubmit);
 function handlerSubmit(event) {
