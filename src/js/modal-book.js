@@ -85,7 +85,7 @@ if (increase && decrease && quantityInput) {
 addToCartBtn.addEventListener('click', () => {
   const qty = quantityInput.value;
   iziToast.show({
-    message: `📚 Додано ${qty} книг у кошик`,
+    message: `📚 Додано ${qty} книг(у) в кошик`,
     backgroundColor: '#fff9e6',
     messageColor: '#000',
   });
