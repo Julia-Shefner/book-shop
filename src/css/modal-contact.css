@@ -1,0 +1,177 @@
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: rgba(46, 47, 66, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-modal {
+  border-radius: 16px;
+
+  background: #fceee6;
+  position: absolute;
+  opacity: 1;
+  pointer-events: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-label {
+  font-size: 16px;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 8px;
+}
+.modal-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.modal-paragraph {
+  margin-bottom: 48px;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+.close-btn {
+  width: 32px;
+  height: 32px;
+  top: 16px;
+  right: 16px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-input {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 12px;
+
+  height: 40px;
+  outline: transparent;
+  background: rgba(11, 5, 0, 0.05);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-input:focus::placeholder,
+.contact-textarea:focus::placeholder {
+  opacity: 0;
+}
+.contact-input:focus,
+.contact-textarea:focus {
+  border: 1px solid rgba(11, 5, 0, 0.6);
+}
+
+.form-input {
+  margin-bottom: 24px;
+}
+
+.contact-textarea-wrapper {
+  margin-bottom: 24px;
+}
+.contact-textarea {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 4px;
+  padding: 12px;
+
+  height: 180px;
+  outline: transparent;
+  background: rgba(11, 5, 0, 0.05);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.contact-input.error {
+  border-color: #ad0000;
+}
+.contact-input.error::placeholder {
+  color: #ad0000;
+}
+
+.error-message {
+  display: none;
+  color: #ad0000;
+  font-size: 12px;
+}
+
+.error-message.show {
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  .send-btn {
+    width: 311px;
+  }
+
+  .contact-modal {
+    padding: 64px 16px;
+    width: 343px;
+    height: 794px;
+  }
+  .contact-input,
+  .contact-textarea {
+    width: 311px;
+  }
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .contact-modal {
+    padding: 64px 32px;
+    width: 704px;
+    height: 760px;
+  }
+  .contact-input,
+  .contact-textarea {
+    width: 640px;
+  }
+  .send-btn {
+    width: 342px;
+    display: block;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .contact-modal {
+    padding: 64px;
+    width: 866px;
+    height: 760px;
+  }
+  .contact-input,
+  .contact-textarea {
+    width: 738px;
+  }
+}

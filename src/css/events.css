@@ -8,6 +8,7 @@
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 16px;
+  max-width: 343px;
 }
 
 .section-title.events-title {
@@ -49,6 +50,20 @@
   margin-bottom: 24px;
 }
 
+/* List element styles */
+
+.events-list-item {
+  width: 343px;
+  height: 521px;
+}
+
+.event-info-wrraper {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Register button */
 
 .events-btn {
@@ -69,4 +84,49 @@
 
 .events-list-item {
   margin-bottom: 56px;
+}
+
+/* Arrow buttons */
+
+.swiper-btn {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+
+.swiper-pagination-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .events-image {
+    width: 340px;
+  }
+  .events-list-item {
+    max-width: 340px;
+  }
+  .events-main-text {
+    max-width: 560px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .swiper-btn,
+  .swiper-pagination.events-pagination {
+    display: none;
+  }
+
+  .events-list-item {
+    max-width: 421px;
+  }
+
+  .events-image {
+    width: 421px;
+  }
+
+  .events-list {
+    gap: 24px;
+  }
 }
