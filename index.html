@@ -21,7 +21,7 @@
     <script type="module" crossorigin src="/book-shop/index.js"></script>
     <link rel="modulepreload" crossorigin href="/book-shop/assets/vendor-BOicE9ou.js">
     <link rel="stylesheet" crossorigin href="/book-shop/assets/vendor-zs9eEBws.css">
-    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-C3Sk5ptv.css">
+    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-Byglgkev.css">
   </head>
   <body>
     <header>
@@ -690,7 +690,58 @@
   </div>
 </div>
 
-      
+      <div class="contact-modal-overlay">
+  <div class="contact-modal">
+    <button type="button" class="close-btn">
+      <svg class="close-icon" width="8" height="8">
+        <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-title">Register</h2>
+    <p class="modal-paragraph"></p>
+    <form class="contact-form" name="client-form" autocomplete="on" novalidate>
+      <div class="form-input">
+        <label class="contact-label" for="user-name">Name*</label>
+
+        <input
+          type="text"
+          class="contact-input"
+          name="name"
+          id="user-name"
+          required
+          placeholder="Ann"
+        />
+        <p class="error-message"></p>
+      </div>
+
+      <div class="form-input">
+        <label class="contact-label" for="user-email">Email*</label>
+
+        <input
+          type="email"
+          class="contact-input"
+          name="email"
+          id="user-email"
+          required
+          placeholder="hello@booksy.com"
+        />
+        <p class="error-message"></p>
+      </div>
+      <div class="contact-textarea-wrapper">
+        <label class="contact-label" for="user-comment">Comment </label>
+        <textarea
+          class="contact-textarea"
+          name="user-comment"
+          id="user-comment"
+          placeholder=" your message..."
+        ></textarea>
+      </div>
+
+      <button class="send-btn" type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
     </main>
 
     
