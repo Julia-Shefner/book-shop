@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const API_BASE = 'https://books-backend.p.goit.global/books';
 const booksList = document.getElementById('booksList');
 const showMoreBtn = document.getElementById('showMoreBtn');
@@ -21,9 +23,7 @@ function getLoadStep() {
 // Отримати всі книги
 async function fetchBooks() {
   try {
-    const res = await fetch(`${API_BASE}/top-books`);
-    if (!res.ok) throw new Error('Failed to load books');
-    const data = await res.json();
+    const { data } = await axios.get(`${API_BASE}/top-books`);
 
     allBooks = data.flatMap(cat =>
       cat.books.map(b => ({ ...b, category: cat.list_name }))
@@ -55,7 +55,7 @@ function fillCategories(categories) {
       .map(c => `<li data-category="${c}">${c}</li>`)
       .join('');
 
-    // ✅ Додаємо "All categories" першим, якщо його ще немає
+
     if (!categoriesList.querySelector('[data-category="all"]')) {
       const allItem = document.createElement('li');
       allItem.classList.add('category-item');
@@ -113,11 +113,10 @@ function filterByCategory(category) {
 
 async function fetchCategoryBooks(category) {
   try {
-    const res = await fetch(
-      `${API_BASE}/category?category=${encodeURIComponent(category)}`
+    const { data } = await axios.get(
+      `${API_BASE}/category`,
+      { params: { category } }
     );
-    if (!res.ok) throw new Error('Failed to load category books');
-    const data = await res.json();
     filteredBooks = data;
     renderBooks();
   } catch (err) {
