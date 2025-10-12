@@ -16,7 +16,7 @@
 }
 
 .feedback-item {
-  width: 277px;
+  max-width: 341px;
   font-size: 18px;
   font-weight: 400;
   display: flex;
@@ -46,7 +46,7 @@
   border-radius: 100%;
 }
 
-.swiper-button-next {
+.swiper-button-nex {
   margin-left: 16px;
 }
 
@@ -84,4 +84,18 @@
 .swiper-pagination > .swiper-pagination-bullet-active {
   background-color: #080c09;
   opacity: 1;
+}
+
+/* ------------TABLET------------ */
+@media (min-width: 768px) {
+  .feedback-item {
+    max-width: 340px;
+  }
+}
+
+/* ------------DESKTOP------------ */
+@media (min-width: 1440px) {
+  .feedback-item {
+    max-width: 421px;
+  }
 }
