@@ -21,7 +21,7 @@
     <script type="module" crossorigin src="/book-shop/index.js"></script>
     <link rel="modulepreload" crossorigin href="/book-shop/assets/vendor-BeNWam2W.js">
     <link rel="stylesheet" crossorigin href="/book-shop/assets/vendor-zs9eEBws.css">
-    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-CK0LRpWY.css">
+    <link rel="stylesheet" crossorigin href="/book-shop/assets/index-DTaG052A.css">
   </head>
   <body>
     <header>
@@ -168,15 +168,23 @@
       <h2 class="books-title">Books</h2>
       <p class="books-count" id="booksCount"></p>
     </div>
-    <div class="select-wrapper">
-      <select id="categorySelect" class="categories-select"></select>
 
+    <!-- ✅ Кастомний селект -->
+    <div class="select-wrapper">
+      <div class="custom-select" id="customSelect">
+        <button class="custom-select-btn" id="customSelectBtn">
+          <span class="custom-select-text">All categories</span>
+          <svg class="select-icon">
+            <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-down"></use>
+          </svg>
+        </button>
+        <ul class="custom-select-options" id="customSelectOptions"></ul>
+      </div>
+
+      <!-- ✅ Звичайний список для десктопа -->
       <ul id="categoriesList" class="categories-list">
         <li class="category-item" data-category="all">All categories</li>
       </ul>
-      <svg class="select-icon">
-        <use href="/book-shop/assets/icons-DC64Y_Ng.svg#icon-down"></use>
-      </svg>
     </div>
   </div>
 
