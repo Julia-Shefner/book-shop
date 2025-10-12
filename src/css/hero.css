@@ -42,7 +42,7 @@
 /* ==== SLIDE TEXT ==== */
 .slide-text {
     position: absolute;
-    bottom: 20px;
+    top: 90px;
     left: 16px;
     color: #fff;
     text-align: left;
@@ -54,7 +54,7 @@
     line-height: 1.4;
     letter-spacing: -0.01em;
     margin-bottom: 16px;
-    max-width: 75%;
+    max-width: 70%;
 }
 
 .slide-text a {
@@ -72,8 +72,9 @@
     text-align: center;
 }
 
-.slide-text a:hover {
-    background-color: #fceee6;
+.slide-text a:hover,
+.slide-text a:focus {
+    background-color: #0b0500;
 }
 
 /* ==== SLIDER NAVIGATION ==== */
@@ -119,30 +120,31 @@
 
 /* ==== MEDIA QUERIES ==== */
 
-/* ===== Tablet (≥768px) ===== */
+/* ===== Tablet ===== */
 @media (min-width: 768px) {
     .hero {
         padding: 0 32px 32px 32px;
-        text-align: left;
     }
 
     .hero-slider {
         height: 274px;
+        border-radius: 0;
+        margin-bottom: 24px;
     }
-
-    /* .swiper-wrapper {
-        padding: 32px 40px;
-    } */
 
     .hero-slider picture,
     .hero-slider img {
         border-radius: 0;
     }
 
+    .slide-text {
+        top: 118px;
+        left: 40px;
+    }
+
     .slide-text h2 {
         font-size: 32px;
         line-height: 1.2;
-        max-width: 274px;
     }
 
     .slide-text a {
@@ -156,44 +158,54 @@
         text-align: center;
     }
 
+    .hero-footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin: 0;
+    }
+
     .hero h1 {
-        font-size: 36px;
-        margin-top: 32px;
+        /* margin-top: -72px; */
+        flex: 1;
+        /* display: flex;
+        flex-wrap: wrap; */
+        max-width: 75%;
     }
 
     .slider-nav {
         justify-content: flex-end;
-        margin-top: -56px;
-        /* aligns arrows beside the heading */
-        margin-right: 32px;
+        gap: 24px;
     }
-
-    /* .slider-button {
-        font-size: 24px;
-        padding: 14px 18px;
-    } */
 }
 
-/* ===== Desktop (≥1024px) ===== */
-@media (min-width: 1024px) {
+/* ===== Desktop ===== */
+@media (min-width: 1440px) {
     .hero {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 48px 40px 72px;
+        padding: 0 64px 32px 64px;
     }
 
     .hero-slider {
-        max-height: 395px;
+        height: 395px;
+        border-radius: 16px;
     }
 
     .slide-text {
-        bottom: 72px;
-        left: 64px;
-        max-width: 45%;
+        top: 155px;
+        left: 56px;
     }
 
     .slide-text h2 {
-        font-size: 26px;
+        font-size: 52px;
+        margin-bottom: 20px;
+    }
+
+    .slide-text a {
+        padding: 8px 20px;
+        width: 227px;
+        height: 40px;
     }
 
     .hero h1 {
