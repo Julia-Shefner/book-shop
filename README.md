@@ -37,26 +37,26 @@
 
 **Початок роботи**
 
-1. **Клонування репозиторію**
+1. Клонування репозиторію
 
 ```bash
 git clone https://github.com/Julia-Shefner/book-shop.git
 cd book-shop
 ```
 
-2. **Встановлення залежностей**
+2. Встановлення залежностей
 
 ```bash
 npm install
 ```
 
-3. **Запуск локального сервера**
+3. Запуск локального сервера
 
 ```bash
 npm run dev
 ```
 
-4. **Збірка білду**
+4. Збірка білду
 
 ```bash
 npm run build
@@ -78,9 +78,13 @@ npm run build
 
 Приклад JS-коду:
 
+```javascript
 const addToCartBtn = document.getElementById('add-to-cart');
-addToCartBtn.addEventListener('click', () => { // додає книгу до кошика та
-показує toast-сповіщення });
+
+addToCartBtn.addEventListener('click', () => {
+  // додає книгу до кошика та показує toast-сповіщення
+});
+```
 
 ---
 
