@@ -14,8 +14,8 @@ function swiperInit() {
         clickable: true,
       },
       navigation: {
-        nextEl: '.events-button-prev',
-        prevEl: '.events-button-next',
+        nextEl: '.events-button-next',
+        prevEl: '.events-button-prev',
       },
       keyboard: {
         enabled: true,
