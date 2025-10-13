@@ -1,22 +1,36 @@
-/* Styles for Mobile devices */
 .container {
   width: 100%;
-  max-width: 375px;
   min-width: 320px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Гумова ділянка: 320–375px */
+@media (min-width: 320px) and (max-width: 374px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Styles for Mobile devices */
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
 }
 
 /* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .container {
     max-width: 768px;
     padding: 0 32px;
   }
 }
-
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .container {
     max-width: 1440px;
     padding: 0 64px;
