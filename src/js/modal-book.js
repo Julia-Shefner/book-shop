@@ -14,20 +14,17 @@ iziToast.settings({
 // ====== ІНІЦІАЛІЗАЦІЯ АКОРДЕОНУ ======
 document.addEventListener('DOMContentLoaded', () => {
   window.accordionInstance = new Accordion('.js-accordion', {
-    duration: 380,     
-    showMultiple: true, 
-    collapse: true      
+    duration: 380,
+    showMultiple: true,
+    collapse: true,
   });
 
   // забезпечуємо потрібні базові стилі для всіх панелей (щоб не конфліктувати з css)
   document.querySelectorAll('.js-accordion .ac-panel').forEach(p => {
-    p.style.overflow = 'hidden';        
-    p.style.boxSizing = 'border-box';  
+    p.style.overflow = 'hidden';
+    p.style.boxSizing = 'border-box';
   });
-
-  
 });
-
 
 // ====== ЕЛЕМЕНТИ ======
 const backdrop = document.getElementById('modal-backdrop');
@@ -49,8 +46,7 @@ document.addEventListener('click', async e => {
       bookCard.querySelector('.book-title')?.textContent || 'Untitled';
     const author =
       bookCard.querySelector('.book-author')?.textContent || 'Unknown';
-    const price =
-      bookCard.querySelector('.book-price')?.textContent || '$0.00';
+    const price = bookCard.querySelector('.book-price')?.textContent || '$0.00';
 
     // Отримуємо id книги
     const bookId = bookCard.dataset.id;
@@ -78,8 +74,10 @@ document.addEventListener('click', async e => {
     document.getElementById('book-author').textContent = author;
     document.getElementById('book-price').textContent = price;
     document.getElementById('details').textContent = descriptionText;
-    document.getElementById('shipping').textContent = 'We ship across the United States within 2–5 business days. All orders are processed through USPS or a reliable courier service. Enjoy free standard shipping on orders over $50.';
-    document.getElementById('returns').textContent = 'You can return an item within 14 days of receiving your order, provided it hasn’t been used and is in its original condition. To start a return, please contact our support team — we’ll guide you through the process quickly and hassle-free.';
+    document.getElementById('shipping').textContent =
+      'We ship across the United States within 2–5 business days. All orders are processed through USPS or a reliable courier service. Enjoy free standard shipping on orders over $50.';
+    document.getElementById('returns').textContent =
+      'You can return an item within 14 days of receiving your order, provided it hasn’t been used and is in its original condition. To start a return, please contact our support team — we’ll guide you through the process quickly and hassle-free.';
 
     // Відкриваємо модалку
     backdrop.classList.remove('is-hidden');
@@ -115,43 +113,32 @@ if (increase && decrease && quantityInput) {
 }
 
 // ====== TOAST-ПОВІДОМЛЕННЯ ======
-function getUkrainianPluralForm(n, form1, form2, form5) {
-  n = Math.abs(n);
-  const n10 = n % 10;
-  const n100 = n % 100;
-
-  if (n100 >= 11 && n100 <= 19) {
-    return form5; 
-  }
-
-  if (n10 === 1) {
-    return form1; 
-  }
-
-  if (n10 >= 2 && n10 <= 4) {
-    return form2; 
-  }
-
-  return form5; 
+function getPluralForm(count, singular, plural) {
+  return count === 1 ? singular : plural;
 }
 
 addToCartBtn.addEventListener('click', () => {
-  const qty = Number(quantityInput.value); 
-  const wordForm = getUkrainianPluralForm(qty, 'книгу', 'книги', 'книг'); 
-  const message = `📚 Додано ${qty} ${wordForm} до кошика`; 
+  const qty = Number(quantityInput.value);
+  const wordForm = getPluralForm(qty, 'book', 'books');
+  const message = ` ✔ ${qty} ${wordForm} added to cart`;
 
   iziToast.show({
     message: message,
-    backgroundColor: '#fff9e6',
-    messageColor: '#000',
+    backgroundColor: '#f9decd',
+    messageColor: '#0b0500',
+    progressBar: false,
   });
+
+  addToCartBtn.blur();
 });
 
 buyNowBtn.addEventListener('click', e => {
   e.preventDefault();
   iziToast.show({
-    message: '📖 Дякуємо за покупку!',
-    backgroundColor: '#fff9e6',
-    messageColor: '#000',
+    message: '❤︎ Thank you for your purchase!',
+    backgroundColor: '#f9decd',
+    messageColor: '#0b0500',
+    progressBar: false,
   });
+  buyNowBtn.blur();
 });

@@ -88,3 +88,7 @@ function handlerSubmit(event) {
 
   form.reset();
 }
+
+const sendBtn = document.querySelector('.send-btn');
+sendBtn.addEventListener('mouseup', () => sendBtn.blur());
+sendBtn.addEventListener('touchend', () => sendBtn.blur());
