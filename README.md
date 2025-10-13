@@ -134,11 +134,11 @@ https://github.com/Valentyna-Pidopryhora
 
 Степен Венгжин — developer / GitHub: https://github.com/Venhzhy
 
-Святослав Рижиков — developer / GitHub: Julia-Shefner
-https://github.com/Slavik199
-
 Вікторія Епова — developer / GitHub: Julia-Shefner
 https://github.com/viktoria-ep
+
+Святослав Рижиков — developer / GitHub: Julia-Shefner
+https://github.com/Slavik199
 
 ---
 
