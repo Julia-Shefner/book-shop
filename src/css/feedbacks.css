@@ -21,7 +21,6 @@
 }
 
 .feedback-item {
-  max-width: 341px;
   min-height: 244px; /* для мобільних */
   font-size: 18px;
   font-weight: 400;
