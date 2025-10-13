@@ -32,11 +32,6 @@
 
   margin-bottom: 24px;
 }
-.location-text {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
-}
 
 .location-contacts {
   display: flex;
@@ -77,7 +72,10 @@
   text-decoration-skip-ink: none;
   color: #0b0500;
 }
-
+.location-contacts-link {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  cursor: pointer;
+}
 .location-contacts-link:hover,
 .location-contacts-link:focus {
   text-decoration: underline;
