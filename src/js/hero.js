@@ -14,10 +14,10 @@ import 'swiper/css/navigation';
 let swiper;
 
 function initSwiper() {
-    // якщо вже існує екземпляр — знищуємо перед повторним створенням
-    if (swiper) {
-        swiper.destroy(true, true);
-    }
+  // якщо вже існує екземпляр — знищуємо перед повторним створенням
+  if (swiper) {
+    swiper.destroy(true, true);
+  }
 
     swiper = new Swiper('.hero-slider', {
         modules: [Navigation, Keyboard, Autoplay],
@@ -50,11 +50,11 @@ function initSwiper() {
 
 // ===== функція оновлення стану кнопок =====
 function updateButtons(swiper) {
-    const prevBtn = document.querySelector('.slider-button.prev');
-    const nextBtn = document.querySelector('.slider-button.next');
+  const prevBtn = document.querySelector('.slider-button.prev');
+  const nextBtn = document.querySelector('.slider-button.next');
 
-    prevBtn.disabled = swiper.isBeginning;
-    nextBtn.disabled = swiper.isEnd;
+  prevBtn.disabled = swiper.isBeginning;
+  nextBtn.disabled = swiper.isEnd;
 }
 
 // ===== запуск при завантаженні сторінки =====
@@ -63,8 +63,8 @@ window.addEventListener('load', initSwiper);
 // ===== оновлення при зміні розміру вікна (debounce) =====
 let resizeTimeout;
 window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        initSwiper();
-    }, 300);
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    initSwiper();
+  }, 300);
 });
