@@ -21,9 +21,8 @@
   justify-content: space-between;
   align-items: center;
 }
-body.menu-open,
-html.menu-open {
-  overflow: hidden; /* блокує вертикальний і горизонтальний скрол */
+body.menu-open {
+  overflow-y: hidden; /* блокує вертикальний і горизонтальний скрол */
 }
 .header-menu.active {
   opacity: 1;
@@ -107,6 +106,7 @@ html.menu-open {
   main {
     margin-top: 64px;
   }
+
   .header-nav-list {
     display: none;
   }
@@ -122,6 +122,9 @@ html.menu-open {
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+  main {
+    margin-top: 72px;
+  }
   .header-container {
     max-width: 768px;
     padding: 0 32px;
