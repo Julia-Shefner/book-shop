@@ -19,29 +19,33 @@ function initSwiper() {
     swiper.destroy(true, true);
   }
 
-  swiper = new Swiper('.hero-slider', {
-    modules: [Navigation, Autoplay],
-    slidesPerView: 1,
-    allowTouchMove: true,
-    loop: false,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: true,
-    },
-    navigation: {
-      nextEl: '.slider-button.next',
-      prevEl: '.slider-button.prev',
-      disabledClass: 'slider-button--disabled',
-    },
-    on: {
-      init() {
-        updateButtons(this);
-      },
-      slideChange() {
-        updateButtons(this);
-      },
-    },
-  });
+    swiper = new Swiper('.hero-slider', {
+        modules: [Navigation, Keyboard, Autoplay],
+        slidesPerView: 1,
+        allowTouchMove: true,
+        loop: false,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true,
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        navigation: {
+            nextEl: '.slider-button.next',
+            prevEl: '.slider-button.prev',
+            disabledClass: 'slider-button--disabled',
+        },
+        on: {
+            init() {
+                updateButtons(this);
+            },
+            slideChange() {
+                updateButtons(this);
+            },
+        },
+    });
 }
 
 // ===== функція оновлення стану кнопок =====

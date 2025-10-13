@@ -1,10 +1,10 @@
 /* ==== HERO SECTION ==== */
 .hero {
-  position: relative;
-  padding: 0 16px 32px 16px;
-  text-align: left;
-  overflow: hidden;
-  max-width: 100%;
+    position: relative;
+    /* padding: 0 16px 32px 16px; */
+    text-align: left;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 /* ==== SLIDER ==== */
@@ -74,7 +74,9 @@
 
 .slide-text a:hover,
 .slide-text a:focus {
-  background-color: #0b0500;
+    background-color: transparent;
+    border: none;
+    background-color: #0b0500;
 }
 
 /* ==== SLIDER NAVIGATION ==== */
@@ -122,97 +124,92 @@
 
 /* ===== Tablet ===== */
 @media (min-width: 768px) {
-  .hero {
-    padding: 0 32px 32px 32px;
-  }
 
-  .hero-slider {
-    height: 274px;
-    border-radius: 0;
-    margin-bottom: 24px;
-  }
+    .hero-slider {
+        height: 274px;
+        border-radius: 0;
+        margin-bottom: 24px;
+    }
 
-  .hero-slider picture,
-  .hero-slider img {
-    border-radius: 0;
-  }
+    .hero-slider picture,
+    .hero-slider img {
+        border-radius: 0;
+    }
 
-  .slide-text {
-    top: 118px;
-    left: 40px;
-  }
+    .slide-text {
+        top: 118px;
+        left: 40px;
+    }
 
-  .slide-text h2 {
-    font-size: 32px;
-    line-height: 1.2;
-  }
+    .slide-text h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
 
-  .slide-text a {
-    display: inline-block;
-    border: 1px solid #e95c0c;
-    border-radius: 4px;
-    padding: 4px 20px;
-    width: 164px;
-    height: 32px;
-    font-size: 16px;
-    text-align: center;
-  }
+    .slide-text a {
+        display: inline-block;
+        border: 1px solid #e95c0c;
+        border-radius: 4px;
+        padding: 4px 20px;
+        width: 164px;
+        height: 32px;
+        font-size: 16px;
+        text-align: center;
+    }
 
-  .hero-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    margin: 0;
-  }
+    .hero-footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin: 0;
+    }
 
-  .hero h1 {
-    /* margin-top: -72px; */
-    flex: 1;
-    /* display: flex;
+    .hero h1 {
+        margin-top: 0;
+        flex: 1;
+        /* display: flex;
         flex-wrap: wrap; */
     max-width: 75%;
   }
 
-  .slider-nav {
-    justify-content: flex-end;
-    gap: 24px;
-  }
+    .slider-nav {
+        justify-content: flex-end;
+        align-items: center;
+        gap: 24px;
+    }
 }
 
 /* ===== Desktop ===== */
 @media (min-width: 1440px) {
-  .hero {
-    padding: 0 64px 32px 64px;
-  }
 
-  .hero-slider {
-    height: 395px;
-    border-radius: 16px;
-  }
+    .hero-slider {
+        height: 395px;
+        border-radius: 16px;
+    }
 
-  .slide-text {
-    top: 155px;
-    left: 56px;
-  }
+    .slide-text {
+        top: 155px;
+        left: 56px;
+    }
 
-  .slide-text h2 {
-    font-size: 52px;
-    margin-bottom: 20px;
-  }
+    .slide-text h2 {
+        font-size: 52px;
+        margin-bottom: 20px;
+    }
 
-  .slide-text a {
-    padding: 8px 20px;
-    width: 227px;
-    height: 40px;
-  }
+    .slide-text a {
+        padding: 8px 20px;
+        width: 227px;
+        height: 40px;
+    }
 
-  .hero h1 {
-    font-size: 40px;
-  }
+    .hero h1 {
+        font-size: 40px;
+    }
 
-  .slider-nav {
-    margin-top: 24px;
-  }
+    .slider-nav {
+        margin-top: 24px;
+    }
 }
