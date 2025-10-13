@@ -168,6 +168,26 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.book-card:hover {
+  transform: translateY(-6px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.book-card:hover .book-image {
+  filter: brightness(1.08) contrast(1.03);
+  transition: filter 0.3s ease;
+}
+
+.book-card:active {
+  transform: translateY(-2px) scale(0.98) rotateX(0) rotateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .book-image {
