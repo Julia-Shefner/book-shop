@@ -213,6 +213,10 @@
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 2px;
+  text-transform: lowercase;
+}
+.book-title::first-letter {
+  text-transform: uppercase;
 }
 
 .book-author {
