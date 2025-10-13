@@ -72,27 +72,17 @@
   text-decoration-skip-ink: none;
   color: #0b0500;
 }
+
 .location-contacts-link {
-  position: relative;
   color: #0b0500;
   text-decoration: none;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
-.location-contacts-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background-color: #ea8d50;
-  transition: width 0.3s ease;
-}
-
-.location-contacts-link:hover::after,
-.location-contacts-link:focus::after {
-  width: 100%;
+.location-contacts-link:hover,
+.location-contacts-link:focus {
+  color: #ea8d50;
 }
 
 /* Styles for Tablet devices */
