@@ -9,12 +9,21 @@ const customSelect = document.getElementById('customSelect');
 const customSelectBtn = document.getElementById('customSelectBtn');
 const customSelectText = document.querySelector('.custom-select-text');
 const customSelectOptions = document.getElementById('customSelectOptions');
-const bookModal = document.getElementById('bookModal');
-const bookModalContent = document.getElementById('bookModalContent');
 
 let allBooks = [];
 let filteredBooks = [];
 let visibleCount = 0;
+
+// 🧩 Функція для видалення дублікатів за назвою
+function removeDuplicates(arr) {
+  const seen = new Set();
+  return arr.filter(book => {
+    const key = book.title.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
 // ДИНАМІКА
 function getChunkSize() {
@@ -32,7 +41,9 @@ async function fetchBooks() {
     allBooks = data.flatMap(cat =>
       cat.books.map(b => ({ ...b, category: cat.list_name }))
     );
-    filteredBooks = [...allBooks];
+    allBooks = removeDuplicates(allBooks);
+    filteredBooks = removeDuplicates([...allBooks]);
+
     const categories = [...new Set(data.map(c => c.list_name))];
     fillCategories(categories);
     visibleCount = 0;
@@ -86,13 +97,14 @@ function renderBooks(append = false) {
   booksCount.textContent = `Showing ${visibleCount} of ${filteredBooks.length}`;
   showMoreBtn.style.display =
     visibleCount < filteredBooks.length ? 'block' : 'none';
+  document.dispatchEvent(new CustomEvent('booksRendered'));
 }
 
 // ФІЛЬТРАЦІЯ
 function filterByCategory(category) {
   visibleCount = 0;
   if (!category || category === 'all') {
-    filteredBooks = [...allBooks];
+    filteredBooks = removeDuplicates([...allBooks]);
     renderBooks(false);
     return;
   }
@@ -104,10 +116,10 @@ async function fetchCategoryBooks(category) {
     const { data } = await axios.get(`${API_BASE}/category`, {
       params: { category },
     });
-    filteredBooks = data;
+    filteredBooks = removeDuplicates(data);
     visibleCount = filteredBooks.length;
 
-    booksList.innerHTML = data
+    booksList.innerHTML = filteredBooks
       .map(
         b => `
         <li class="book-card" data-id="${b._id}">
@@ -126,6 +138,7 @@ async function fetchCategoryBooks(category) {
 
     booksCount.textContent = `Showing ${filteredBooks.length} of ${filteredBooks.length}`;
     showMoreBtn.style.display = 'none';
+    document.dispatchEvent(new CustomEvent('booksRendered'));
   } catch (err) {
     console.error('Error loading category books:', err);
   }
@@ -136,13 +149,16 @@ showMoreBtn.addEventListener('click', async () => {
   showMoreBtn.disabled = true;
   showMoreBtn.style.opacity = '0.6';
   showMoreBtn.style.cursor = 'not-allowed';
+
   await renderBooks(true);
+
   if (visibleCount < filteredBooks.length) {
     showMoreBtn.disabled = false;
     showMoreBtn.style.opacity = '';
     showMoreBtn.style.cursor = '';
   }
 });
+
 // CUSTOM SELECT
 customSelectBtn.addEventListener('click', () => {
   customSelect.classList.toggle('open');
