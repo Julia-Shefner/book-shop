@@ -83,7 +83,7 @@ document.addEventListener('click', async e => {
 
     // Відкриваємо модалку
     backdrop.classList.remove('is-hidden');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflowY = 'hidden';
   }
 });
 
