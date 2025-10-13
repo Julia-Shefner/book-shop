@@ -20,13 +20,17 @@ function initSwiper() {
     }
 
     swiper = new Swiper('.hero-slider', {
-        modules: [Navigation, Autoplay],
+        modules: [Navigation, Keyboard, Autoplay],
         slidesPerView: 1,
         allowTouchMove: true,
         loop: false,
         autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: true,
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
         },
         navigation: {
             nextEl: '.slider-button.next',
