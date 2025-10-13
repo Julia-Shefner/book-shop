@@ -37,14 +37,23 @@ function getLoadStep() {
 // FETCH BOOKS
 async function fetchBooks() {
   try {
-    const { data } = await axios.get(`${API_BASE}/top-books`);
-    allBooks = data.flatMap(cat =>
-      cat.books.map(b => ({ ...b, category: cat.list_name }))
+    const { data: topData } = await axios.get(`${API_BASE}/top-books`);
+    const categories = [...new Set(topData.map(c => c.list_name))];
+    const categoryPromises = categories.map(cat =>
+      axios
+        .get(`${API_BASE}/category`, { params: { category: cat } })
+        .then(res => res.data)
+        .catch(() => [])
     );
-    allBooks = removeDuplicates(allBooks);
-    filteredBooks = removeDuplicates([...allBooks]);
 
-    const categories = [...new Set(data.map(c => c.list_name))];
+    const categoryBooks = await Promise.all(categoryPromises);
+    allBooks = categoryBooks.flat();
+    allBooks = removeDuplicates(allBooks);
+    if (allBooks.length > 120) {
+      allBooks = allBooks.slice(0, 120);
+    }
+
+    filteredBooks = [...allBooks];
     fillCategories(categories);
     visibleCount = 0;
     renderBooks(false);
