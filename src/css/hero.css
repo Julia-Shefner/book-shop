@@ -1,89 +1,89 @@
 /* ==== HERO SECTION ==== */
 .hero {
-    position: relative;
-    padding: 0 16px 32px 16px;
-    text-align: left;
-    overflow: hidden;
-    max-width: 100%;
+  position: relative;
+  padding: 0 16px 32px 16px;
+  text-align: left;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* ==== SLIDER ==== */
 .hero-slider {
-    position: relative;
-    overflow: hidden;
-    /* min-width: 343px; */
-    height: 199px;
-    border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  /* min-width: 343px; */
+  height: 199px;
+  border-radius: 8px;
 }
 
 .hero-slider ul {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-    list-style: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .swiper-slide {
-    flex: 0 0 100%;
-    position: relative;
-    width: 100%;
+  flex: 0 0 100%;
+  position: relative;
+  width: 100%;
 }
 
 .hero-slider picture,
 .hero-slider img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* ==== SLIDE TEXT ==== */
 .slide-text {
-    position: absolute;
-    top: 90px;
-    left: 16px;
-    color: #fff;
-    text-align: left;
+  position: absolute;
+  top: 90px;
+  left: 16px;
+  color: #fff;
+  text-align: left;
 }
 
 .slide-text h2 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-    margin-bottom: 16px;
-    max-width: 70%;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  max-width: 70%;
 }
 
 .slide-text a {
-    display: inline-block;
-    border: 0.52px solid #e95c0c;
-    border-radius: 2px;
-    padding: 4px 10px;
-    width: 117px;
-    height: 20px;
-    background-color: #e95c0c;
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 1.5;
-    color: #fff;
-    text-align: center;
+  display: inline-block;
+  border: 0.52px solid #e95c0c;
+  border-radius: 2px;
+  padding: 4px 10px;
+  width: 117px;
+  height: 20px;
+  background-color: #e95c0c;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
 }
 
 .slide-text a:hover,
 .slide-text a:focus {
-    background-color: #0b0500;
+  background-color: #0b0500;
 }
 
 /* ==== SLIDER NAVIGATION ==== */
 .slider-nav {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 16px;
-    margin: 24px 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
 }
 
 /* .slider-button {
@@ -109,110 +109,110 @@
 
 /* ==== HERO TITLE ==== */
 .hero h1 {
-    text-align: left;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin-top: 24px;
-    color: #0b0500;
+  text-align: left;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 24px;
+  color: #0b0500;
 }
 
 /* ==== MEDIA QUERIES ==== */
 
 /* ===== Tablet ===== */
 @media (min-width: 768px) {
-    .hero {
-        padding: 0 32px 32px 32px;
-    }
+  .hero {
+    padding: 0 32px 32px 32px;
+  }
 
-    .hero-slider {
-        height: 274px;
-        border-radius: 0;
-        margin-bottom: 24px;
-    }
+  .hero-slider {
+    height: 274px;
+    border-radius: 0;
+    margin-bottom: 24px;
+  }
 
-    .hero-slider picture,
-    .hero-slider img {
-        border-radius: 0;
-    }
+  .hero-slider picture,
+  .hero-slider img {
+    border-radius: 0;
+  }
 
-    .slide-text {
-        top: 118px;
-        left: 40px;
-    }
+  .slide-text {
+    top: 118px;
+    left: 40px;
+  }
 
-    .slide-text h2 {
-        font-size: 32px;
-        line-height: 1.2;
-    }
+  .slide-text h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
 
-    .slide-text a {
-        display: inline-block;
-        border: 1px solid #e95c0c;
-        border-radius: 4px;
-        padding: 4px 20px;
-        width: 164px;
-        height: 32px;
-        font-size: 16px;
-        text-align: center;
-    }
+  .slide-text a {
+    display: inline-block;
+    border: 1px solid #e95c0c;
+    border-radius: 4px;
+    padding: 4px 20px;
+    width: 164px;
+    height: 32px;
+    font-size: 16px;
+    text-align: center;
+  }
 
-    .hero-footer {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        gap: 24px;
-        margin: 0;
-    }
+  .hero-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+  }
 
-    .hero h1 {
-        /* margin-top: -72px; */
-        flex: 1;
-        /* display: flex;
+  .hero h1 {
+    /* margin-top: -72px; */
+    flex: 1;
+    /* display: flex;
         flex-wrap: wrap; */
-        max-width: 75%;
-    }
+    max-width: 75%;
+  }
 
-    .slider-nav {
-        justify-content: flex-end;
-        gap: 24px;
-    }
+  .slider-nav {
+    justify-content: flex-end;
+    gap: 24px;
+  }
 }
 
 /* ===== Desktop ===== */
 @media (min-width: 1440px) {
-    .hero {
-        padding: 0 64px 32px 64px;
-    }
+  .hero {
+    padding: 0 64px 32px 64px;
+  }
 
-    .hero-slider {
-        height: 395px;
-        border-radius: 16px;
-    }
+  .hero-slider {
+    height: 395px;
+    border-radius: 16px;
+  }
 
-    .slide-text {
-        top: 155px;
-        left: 56px;
-    }
+  .slide-text {
+    top: 155px;
+    left: 56px;
+  }
 
-    .slide-text h2 {
-        font-size: 52px;
-        margin-bottom: 20px;
-    }
+  .slide-text h2 {
+    font-size: 52px;
+    margin-bottom: 20px;
+  }
 
-    .slide-text a {
-        padding: 8px 20px;
-        width: 227px;
-        height: 40px;
-    }
+  .slide-text a {
+    padding: 8px 20px;
+    width: 227px;
+    height: 40px;
+  }
 
-    .hero h1 {
-        font-size: 40px;
-    }
+  .hero h1 {
+    font-size: 40px;
+  }
 
-    .slider-nav {
-        margin-top: 24px;
-    }
+  .slider-nav {
+    margin-top: 24px;
+  }
 }
