@@ -31,7 +31,7 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
   padding: 32px;
-  justify-content: space-between; /* текст зверху, аватар внизу */
+  justify-content: space-between; /*текст зверху, аватар внизу  */
   align-items: flex-start;
 }
 
@@ -48,7 +48,6 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
-  align-self: center; /* центр горизонтально */
   margin-top: auto; /* “приклеює” донизу, але все одно по центру горизонтально */
 }
 
