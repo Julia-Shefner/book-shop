@@ -15,8 +15,14 @@
   position: relative; /* щоб кнопки позиціонувались відносно секції */
 }
 
+.feedback-list {
+  display: flex;
+  align-items: stretch; /* усі li однакової висоти */
+}
+
 .feedback-item {
   max-width: 341px;
+  min-height: 244px; /* для мобільних */
   font-size: 18px;
   font-weight: 400;
   display: flex;
@@ -25,6 +31,8 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
   padding: 32px;
+  justify-content: space-between; /* текст зверху, аватар внизу */
+  align-items: flex-start;
 }
 
 .feedback-item-content {
@@ -40,6 +48,8 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
+  align-self: center; /* центр горизонтально */
+  margin-top: auto; /* “приклеює” донизу, але все одно по центру горизонтально */
 }
 
 .feedback-item-userimg {
@@ -97,5 +107,6 @@
 @media (min-width: 1440px) {
   .feedback-item {
     max-width: 421px;
+    min-height: 217px;
   }
 }
