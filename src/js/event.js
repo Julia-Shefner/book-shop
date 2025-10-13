@@ -34,3 +34,10 @@ function swiperInit() {
 
 swiperInit();
 window.addEventListener('resize', swiperInit);
+
+const navButtons = document.querySelectorAll('.btn-arrow');
+
+navButtons.forEach(btn => {
+  btn.addEventListener('mouseup', () => btn.blur());
+  btn.addEventListener('touchend', () => btn.blur());
+});
