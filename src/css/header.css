@@ -97,6 +97,16 @@ body.menu-open {
   width: 12px;
   height: 12px;
 }
+.header-nav-link {
+  transition: color 0.2s ease;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus {
+  color: #ea8d50;
+  outline: none;
+  background: none;
+}
 
 /* Only mobile devices */
 @media (max-width: 767px) {
