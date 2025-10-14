@@ -3,29 +3,34 @@
 
   <div class="books-header">
     <div class="books-header-row">
-      <h2 class="books-title">Books</h2>
-      <p class="books-count" id="booksCount"></p>
-    </div>
+      <h3 class="books-title">Books</h3>
 
+      <p class="books-count" id="booksCount">Showing 0 of 0</p>
+    </div>
     <div class="select-wrapper">
+      <ul id="categoriesList" class="categories-list">
+        <li class="category-item" data-category="all">All categories</li>
+      </ul>
+
       <div class="custom-select" id="customSelect">
-        <button class="custom-select-btn" id="customSelectBtn">
-          <span class="custom-select-text">Сategories</span>
+        <button class="custom-select-btn" id="customSelectBtn" type="button">
+          <p class="custom-select-text">Categories</p>
+
           <svg class="select-icon">
             <use href="/img/icons.svg#icon-down"></use>
           </svg>
         </button>
+
         <ul class="custom-select-options" id="customSelectOptions"></ul>
       </div>
-
-      <ul id="categoriesList" class="categories-list">
-        <li class="category-item" data-category="all">All categories</li>
-      </ul>
     </div>
   </div>
 
   <div class="books-content">
     <ul id="booksList" class="books-list"></ul>
-    <button id="showMoreBtn" class="show-more-btn">Show More</button>
+
+    <button id="showMoreBtn" class="show-more-btn" type="button">
+      Show More
+    </button>
   </div>
 </section>

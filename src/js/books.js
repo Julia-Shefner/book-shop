@@ -14,7 +14,7 @@ let allBooks = [];
 let filteredBooks = [];
 let visibleCount = 0;
 
-// 🧩 Функція для видалення дублікатів за назвою
+// 🧩 Видаляємо дублікати за назвою
 function removeDuplicates(arr) {
   const seen = new Set();
   return arr.filter(book => {
@@ -25,36 +25,27 @@ function removeDuplicates(arr) {
   });
 }
 
-// ДИНАМІКА
 function getChunkSize() {
-  if (window.innerWidth >= 768) return 24;
-  return 10;
+  return window.innerWidth >= 768 ? 24 : 10;
 }
 function getLoadStep() {
   return 4;
 }
 
-// FETCH BOOKS
+// 📚 Отримуємо 120 книжок
 async function fetchBooks() {
   try {
-    const { data: topData } = await axios.get(`${API_BASE}/top-books`);
-    const categories = [...new Set(topData.map(c => c.list_name))];
-    const categoryPromises = categories.map(cat =>
-      axios
-        .get(`${API_BASE}/category`, { params: { category: cat } })
-        .then(res => res.data)
-        .catch(() => [])
+    const { data } = await axios.get(`${API_BASE}/top-books`);
+    allBooks = data.flatMap(cat =>
+      cat.books.map(b => ({ ...b, category: cat.list_name }))
     );
 
-    const categoryBooks = await Promise.all(categoryPromises);
-    allBooks = categoryBooks.flat();
-    allBooks = removeDuplicates(allBooks);
-    if (allBooks.length > 120) {
-      allBooks = allBooks.slice(0, 120);
-    }
-
+    allBooks = removeDuplicates(allBooks).slice(0, 120);
     filteredBooks = [...allBooks];
+
+    const categories = [...new Set(data.map(c => c.list_name))];
     fillCategories(categories);
+
     visibleCount = 0;
     renderBooks(false);
   } catch (err) {
@@ -62,24 +53,20 @@ async function fetchBooks() {
   }
 }
 
-// FILL CATEGORIES
+// 🏷 Заповнення категорій
 function fillCategories(categories) {
-  customSelectOptions.innerHTML = `
-    <li data-category="all">All categories</li>
-    ${categories.map(c => `<li data-category="${c}">${c}</li>`).join('')}
-  `;
-  categoriesList.innerHTML = `
-    <li data-category="all">All categories</li>
-    ${categories.map(c => `<li data-category="${c}">${c}</li>`).join('')}
-  `;
+  const items = categories
+    .map(c => `<li data-category="${c}">${c}</li>`)
+    .join('');
+  customSelectOptions.innerHTML = `<li data-category="all">All categories</li>${items}`;
+  categoriesList.innerHTML = `<li data-category="all">All categories</li>${items}`;
 }
 
-// RENDER BOOKS
+// 🖼 Рендер книжок
 function renderBooks(append = false) {
   const chunk = getChunkSize();
   const step = getLoadStep();
   const end = visibleCount === 0 ? chunk : visibleCount + step;
-
   const booksToShow = filteredBooks.slice(visibleCount, end);
 
   const markup = booksToShow
@@ -103,94 +90,93 @@ function renderBooks(append = false) {
   booksList.insertAdjacentHTML('beforeend', markup);
 
   visibleCount = end;
-  booksCount.textContent = `Showing ${visibleCount} of ${filteredBooks.length}`;
+  booksCount.textContent = `Showing ${Math.min(
+    visibleCount,
+    filteredBooks.length
+  )} of ${filteredBooks.length}`;
   showMoreBtn.style.display =
     visibleCount < filteredBooks.length ? 'block' : 'none';
-  document.dispatchEvent(new CustomEvent('booksRendered'));
 }
 
-// ФІЛЬТРАЦІЯ
+// 🔍 Фільтрація
 function filterByCategory(category) {
   visibleCount = 0;
   if (!category || category === 'all') {
-    filteredBooks = removeDuplicates([...allBooks]);
+    filteredBooks = [...allBooks];
     renderBooks(false);
     return;
   }
   fetchCategoryBooks(category);
 }
 
+// 🧾 Книги за конкретною категорією
 async function fetchCategoryBooks(category) {
   try {
     const { data } = await axios.get(`${API_BASE}/category`, {
       params: { category },
     });
     filteredBooks = removeDuplicates(data);
-    visibleCount = filteredBooks.length;
-
-    booksList.innerHTML = filteredBooks
-      .map(
-        b => `
-        <li class="book-card" data-id="${b._id}">
-          <img class="book-image" src="${b.book_image}" alt="${b.title}" />
-          <div class="book-info">
-            <div>
-              <h3 class="book-title">${b.title}</h3>
-              <p class="book-author">${b.author}</p>
-            </div>
-            <p class="book-price">$${(Math.random() * 90 + 10).toFixed(2)}</p>
-          </div>
-          <button class="learn-more-btn" data-id="${b._id}">Learn More</button>
-        </li>`
-      )
-      .join('');
-
-    booksCount.textContent = `Showing ${filteredBooks.length} of ${filteredBooks.length}`;
-    showMoreBtn.style.display = 'none';
-    document.dispatchEvent(new CustomEvent('booksRendered'));
+    visibleCount = 0;
+    renderBooks(false);
   } catch (err) {
     console.error('Error loading category books:', err);
   }
 }
 
-// КНОПКА SHOW MORE
+// 📖 Кнопка Show More
 showMoreBtn.addEventListener('click', async () => {
   showMoreBtn.disabled = true;
   showMoreBtn.style.opacity = '0.6';
-  showMoreBtn.style.cursor = 'not-allowed';
 
   await renderBooks(true);
 
   if (visibleCount < filteredBooks.length) {
     showMoreBtn.disabled = false;
-    showMoreBtn.style.opacity = '';
-    showMoreBtn.style.cursor = '';
+    showMoreBtn.style.opacity = '1';
   }
 });
 
-// CUSTOM SELECT
-customSelectBtn.addEventListener('click', () => {
+// 🧭 Відкриття/закриття селекту
+customSelectBtn.addEventListener('click', e => {
+  e.stopPropagation();
   customSelect.classList.toggle('open');
 });
 
+// 📂 Вибір категорії в селекті
 customSelectOptions.addEventListener('click', e => {
   if (e.target.tagName === 'LI') {
-    const selected = e.target.getAttribute('data-category');
+    const selected = e.target.dataset.category;
     customSelectText.textContent = e.target.textContent;
     customSelect.classList.remove('open');
     filterByCategory(selected);
   }
 });
 
-// DESKTOP LIST
+// 🧱 Закриття селекту при кліку поза ним
+document.addEventListener('click', e => {
+  const isClickInside = customSelect.contains(e.target);
+  if (!isClickInside) {
+    customSelect.classList.remove('open');
+  }
+});
+
+// 🖱 Клік по списку категорій
 categoriesList.addEventListener('click', e => {
   if (e.target.tagName === 'LI') {
-    const selected = e.target.getAttribute('data-category');
+    const selected = e.target.dataset.category;
     filterByCategory(selected);
     e.target.classList.add('pressed');
     setTimeout(() => e.target.classList.remove('pressed'), 150);
   }
 });
 
-// ІНІЦІАЛІЗАЦІЯ
+// 🚀 Старт
 fetchBooks();
+
+// 📖 Відкриття модального вікна книги
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('learn-more-btn')) {
+    const bookId = e.target.dataset.id;
+    openBookModal(bookId);
+  }
+});
