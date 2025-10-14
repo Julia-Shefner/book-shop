@@ -84,12 +84,7 @@ body.menu-open {
   flex-direction: column;
   gap: 40px;
 }
-.header-menu-nav {
-  display: flex;
-  width: 100%;
-  align-items: start;
-  margin-top: 16px;
-}
+
 .header-menu-nav-item {
   text-align: center;
 }
@@ -112,6 +107,10 @@ body.menu-open {
 @media (max-width: 767px) {
   .header-container {
     height: 64px;
+  }
+  .header-menu-nav {
+    padding-top: 16px;
+    margin-top: 64px;
   }
   main {
     margin-top: 64px;
