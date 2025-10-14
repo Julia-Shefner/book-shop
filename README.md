@@ -15,13 +15,13 @@
 
 **Зміст**
 
-- [Технології](#computer-технології)
-- [Початок роботи](#rocket-початок-роботи)
-- [Використання](#jigsaw-використання)
-- [Функціонал](#dart-функціонал)
-- [To Do](#memo-to-do)
-- [Команда проєкту](#female-technologist-команда-проєкту)
-- [Джерела натхнення](#star2-джерела-натхнення)
+- **Технології**
+- **Початок роботи**
+- **Використання**
+- **Функціонал**
+- **To Do**
+- **Команда проєкту**
+- **Джерела / Література**
 
 ---
 
@@ -134,11 +134,9 @@ https://github.com/Valentyna-Pidopryhora
 
 Степан Венгжин — developer / GitHub: https://github.com/Venhzhy
 
-Вікторія Епова — developer / GitHub: Julia-Shefner
-https://github.com/viktoria-ep
+Вікторія Епова — developer / GitHub: https://github.com/viktoria-ep
 
-Святослав Рижиков — developer / GitHub: Julia-Shefner
-https://github.com/Slavik199
+Святослав Рижиков — developer / GitHub: https://github.com/Slavik199
 
 ---
 

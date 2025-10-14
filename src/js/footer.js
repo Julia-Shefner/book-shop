@@ -1,13 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-// iziToast.settings({
-//   position: 'top-left',
-//   // target: '.footer-form',
-//   transitionIn: 'fadeInDown',
-//   transitionOut: 'fadeOutUp',
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.footer-form');
 

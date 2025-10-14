@@ -1,12 +1,8 @@
 import './js/books';
-import './js/books-api';
 import './js/event';
 import './js/feedbacks';
 import './js/header';
 import './js/hero';
-import './js/location';
 import './js/modal-book';
 import './js/modal-contact';
-import './js/refs';
-import './js/render-function';
 import './js/footer';
