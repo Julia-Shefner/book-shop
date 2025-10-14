@@ -132,7 +132,7 @@ https://github.com/Valentyna-Pidopryhora
 
 Ольга Шамрай — developer / GitHub: https://github.com/olha-shamrai
 
-Степен Венгжин — developer / GitHub: https://github.com/Venhzhy
+Степан Венгжин — developer / GitHub: https://github.com/Venhzhy
 
 Вікторія Епова — developer / GitHub: Julia-Shefner
 https://github.com/viktoria-ep
