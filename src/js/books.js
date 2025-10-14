@@ -14,11 +14,12 @@ let allBooks = [];
 let filteredBooks = [];
 let visibleCount = 0;
 
-// 🌀 ЛОАДЕР
+// 🌀 ЛОАДЕР — тільки для секції книжок
+const booksSection = document.querySelector('.books-section');
 const loader = document.createElement('div');
-loader.classList.add('loader');
-loader.innerHTML = `<span class="loader-circle"></span>`;
-document.body.appendChild(loader);
+loader.classList.add('books-loader');
+loader.innerHTML = `<div class="loader-circle"></div>`;
+booksSection.appendChild(loader);
 
 function showLoader() {
   loader.classList.add('active');
