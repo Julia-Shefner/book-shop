@@ -9,3 +9,4 @@ import './js/modal-book';
 import './js/modal-contact';
 import './js/refs';
 import './js/render-function';
+import './js/footer';
