@@ -1,34 +1,27 @@
 <section id="books" class="books-section">
   <h2 class="visually-hidden">Trending books</h2>
-
   <div class="books-header">
     <div class="books-header-row">
       <h3 class="books-title">Books</h3>
-
       <p class="books-count" id="booksCount">Showing 0 of 0</p>
     </div>
     <div class="select-wrapper">
       <ul id="categoriesList" class="categories-list">
         <li class="category-item" data-category="all">All categories</li>
       </ul>
-
       <div class="custom-select" id="customSelect">
         <button class="custom-select-btn" id="customSelectBtn" type="button">
-          <p class="custom-select-text">Categories</p>
-
+          <span class="custom-select-text">Categories</span>
           <svg class="select-icon">
             <use href="/img/icons.svg#icon-down"></use>
           </svg>
         </button>
-
         <ul class="custom-select-options" id="customSelectOptions"></ul>
       </div>
     </div>
   </div>
-
   <div class="books-content">
     <ul id="booksList" class="books-list"></ul>
-
     <button id="showMoreBtn" class="show-more-btn" type="button">
       Show More
     </button>
