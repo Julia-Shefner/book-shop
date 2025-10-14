@@ -152,9 +152,9 @@
 
 .footer2-link:hover,
 .footer2-link:focus {
-    color: #ea8d50;
+    color: #fceee6;
     outline: none;
-    background: #0b0500;
+    background: none;
 }
 
 .footer2-link::before {
