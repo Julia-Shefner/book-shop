@@ -10,6 +10,18 @@ const customSelectBtn = document.getElementById('customSelectBtn');
 const customSelectText = document.querySelector('.custom-select-text');
 const customSelectOptions = document.getElementById('customSelectOptions');
 
+// 🌀 ЛОАДЕР
+const loader = document.createElement('div');
+loader.classList.add('loader');
+loader.innerHTML = `<span class="loader-circle"></span>`;
+document.body.appendChild(loader);
+function showLoader() {
+  loader.classList.add('active');
+}
+function hideLoader() {
+  loader.classList.remove('active');
+}
+
 let allBooks = [];
 let filteredBooks = [];
 let visibleCount = 0;
