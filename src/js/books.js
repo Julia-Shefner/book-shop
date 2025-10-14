@@ -173,7 +173,7 @@ categoriesList.addEventListener('click', e => {
 // 🚀 Старт
 fetchBooks();
 
-// ВІДКРИТТЯ МОДАЛКИ
+// 📚 ВІДКРИТТЯ МОДАЛКИ
 document.addEventListener('click', e => {
   const btn = e.target.closest('.learn-more-btn');
   if (!btn) return;
