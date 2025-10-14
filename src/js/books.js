@@ -10,21 +10,22 @@ const customSelectBtn = document.getElementById('customSelectBtn');
 const customSelectText = document.querySelector('.custom-select-text');
 const customSelectOptions = document.getElementById('customSelectOptions');
 
+let allBooks = [];
+let filteredBooks = [];
+let visibleCount = 0;
+
 // 🌀 ЛОАДЕР
 const loader = document.createElement('div');
 loader.classList.add('loader');
 loader.innerHTML = `<span class="loader-circle"></span>`;
 document.body.appendChild(loader);
+
 function showLoader() {
   loader.classList.add('active');
 }
 function hideLoader() {
   loader.classList.remove('active');
 }
-
-let allBooks = [];
-let filteredBooks = [];
-let visibleCount = 0;
 
 // 🧩 Видаляємо дублікати за назвою
 function removeDuplicates(arr) {
@@ -46,6 +47,7 @@ function getLoadStep() {
 
 // 📚 Отримуємо 120 книжок
 async function fetchBooks() {
+  showLoader();
   try {
     const { data } = await axios.get(`${API_BASE}/top-books`);
     allBooks = data.flatMap(cat =>
@@ -62,6 +64,8 @@ async function fetchBooks() {
     renderBooks(false);
   } catch (err) {
     console.error('Error loading books:', err);
+  } finally {
+    hideLoader();
   }
 }
 
@@ -123,6 +127,7 @@ function filterByCategory(category) {
 
 // 🧾 Книги за конкретною категорією
 async function fetchCategoryBooks(category) {
+  showLoader();
   try {
     const { data } = await axios.get(`${API_BASE}/category`, {
       params: { category },
@@ -132,6 +137,8 @@ async function fetchCategoryBooks(category) {
     renderBooks(false);
   } catch (err) {
     console.error('Error loading category books:', err);
+  } finally {
+    hideLoader();
   }
 }
 
