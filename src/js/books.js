@@ -173,10 +173,15 @@ categoriesList.addEventListener('click', e => {
 // 🚀 Старт
 fetchBooks();
 
-// 📖 Відкриття модального вікна книги
+// ВІДКРИТТЯ МОДАЛКИ
 document.addEventListener('click', e => {
-  if (e.target.classList.contains('learn-more-btn')) {
-    const bookId = e.target.dataset.id;
+  const btn = e.target.closest('.learn-more-btn');
+  if (!btn) return;
+
+  const bookId = btn.dataset.id;
+  if (typeof openBookModal === 'function') {
     openBookModal(bookId);
+  } else {
+    console.warn('openBookModal() не знайдено — перевір підключення modal.js');
   }
 });
