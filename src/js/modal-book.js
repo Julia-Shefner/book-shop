@@ -115,7 +115,7 @@ function getPluralForm(count, singular, plural) {
 addToCartBtn.addEventListener('click', () => {
   const qty = Number(quantityInput.value);
   const wordForm = getPluralForm(qty, 'book', 'books');
-  const message = `✔️ ${qty} ${wordForm} added to cart`;
+  const message = `✔ ${qty} ${wordForm} added to cart`;
 
   iziToast.show({
     message: message,
@@ -130,7 +130,7 @@ addToCartBtn.addEventListener('click', () => {
 buyNowBtn.addEventListener('click', e => {
   e.preventDefault();
   iziToast.show({
-    message: '❤️︎ Thank you for your purchase!',
+    message: '❤︎ Thank you for your purchase!',
     backgroundColor: '#f9decd',
     messageColor: '#0b0500',
     progressBar: false,
