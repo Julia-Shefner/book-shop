@@ -142,3 +142,27 @@ buyNowBtn.addEventListener('click', e => {
   });
   buyNowBtn.blur();
 });
+
+// ГЛОБАЛЬНА ФУНКЦІЯ ДЛЯ BOOKS.JS
+window.openBookModal = async function (bookId) {
+  try {
+    const res = await fetch(`https://books-backend.p.goit.global/books/${bookId}`);
+    if (!res.ok) throw new Error('Book not found');
+    const data = await res.json();
+
+    document.getElementById('book-image').src = data.book_image || '';
+    document.getElementById('book-title').textContent = data.title || 'Untitled';
+    document.getElementById('book-author').textContent = data.author || 'Unknown';
+    document.getElementById('book-price').textContent = $${(Math.random() * 90 + 10).toFixed(2)};
+    document.getElementById('details').textContent = data.description || 'No description available';
+    document.getElementById('shipping').textContent =
+      'We ship within 2–5 business days across the U.S. Free standard shipping on orders over $50.';
+    document.getElementById('returns').textContent =
+      'You can return an item within 14 days if unused and in its original packaging.';
+
+    backdrop.classList.remove('is-hidden');
+    document.body.style.overflowY = 'hidden';
+  } catch (err) {
+    console.error('Помилка при відкритті модалки:', err);
+  }
+};
