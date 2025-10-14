@@ -29,7 +29,6 @@
 }
 .location-title {
   font-size: 48px;
-
   margin-bottom: 24px;
 }
 
@@ -64,18 +63,19 @@
   letter-spacing: -0.01em;
 }
 
-.location-contacts-link,
 .location-contacts-address {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  text-decoration-skip-ink: none;
-  color: #0b0500;
+  font-style: normal;
 }
 
 .location-contacts-link {
-  color: #0b0500;
-  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
   transition: color 0.3s ease;
   cursor: pointer;
 }
