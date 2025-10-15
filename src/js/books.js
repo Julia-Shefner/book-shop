@@ -14,18 +14,18 @@ let allBooks = [];
 let filteredBooks = [];
 let visibleCount = 0;
 
-// 🌀 ЛОАДЕР — тільки для секції книжок
+// ЛОАДЕР
 const booksSection = document.querySelector('.books-section');
-const loader = document.createElement('div');
-loader.classList.add('books-loader');
-loader.innerHTML = `<div class="loader-circle"></div>`;
-booksSection.appendChild(loader);
+const loaderOverlay = document.createElement('div');
+loaderOverlay.classList.add('books-loader-overlay');
+loaderOverlay.innerHTML = `<div class="books-loader"></div>`;
+booksSection.appendChild(loaderOverlay);
 
 function showLoader() {
-  loader.classList.add('active');
+  loaderOverlay.classList.add('active');
 }
 function hideLoader() {
-  loader.classList.remove('active');
+  loaderOverlay.classList.remove('active');
 }
 
 // 🧩 Видаляємо дублікати за назвою
@@ -48,8 +48,8 @@ function getLoadStep() {
 
 // 📚 Отримуємо 120 книжок
 async function fetchBooks() {
-  showLoader();
   try {
+    showLoader();
     const { data } = await axios.get(`${API_BASE}/top-books`);
     allBooks = data.flatMap(cat =>
       cat.books.map(b => ({ ...b, category: cat.list_name }))
@@ -116,20 +116,28 @@ function renderBooks(append = false) {
 }
 
 // 🔍 Фільтрація
-function filterByCategory(category) {
+async function filterByCategory(category) {
   visibleCount = 0;
-  if (!category || category === 'all') {
-    filteredBooks = [...allBooks];
-    renderBooks(false);
-    return;
+  showLoader();
+  try {
+    if (!category || category === 'all') {
+      await new Promise(r => setTimeout(r, 300));
+      filteredBooks = [...allBooks];
+      renderBooks(false);
+    } else {
+      await fetchCategoryBooks(category);
+    }
+  } catch (err) {
+    console.error('Error filtering category:', err);
+  } finally {
+    hideLoader();
   }
-  fetchCategoryBooks(category);
 }
 
 // 🧾 Книги за конкретною категорією
 async function fetchCategoryBooks(category) {
-  showLoader();
   try {
+    showLoader();
     const { data } = await axios.get(`${API_BASE}/category`, {
       params: { category },
     });
@@ -145,12 +153,14 @@ async function fetchCategoryBooks(category) {
 
 // 📖 Кнопка Show More
 showMoreBtn.addEventListener('click', async () => {
+  showLoader();
   showMoreBtn.disabled = true;
   showMoreBtn.style.opacity = '0.6';
-
-  await renderBooks(true);
-
-  if (visibleCount < filteredBooks.length) {
+  try {
+    await new Promise(r => setTimeout(r, 200));
+    renderBooks(true);
+  } finally {
+    hideLoader();
     showMoreBtn.disabled = false;
     showMoreBtn.style.opacity = '1';
   }
