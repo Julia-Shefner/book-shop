@@ -79,6 +79,7 @@ document.addEventListener('click', async e => {
 function closeModal() {
   backdrop.classList.add('is-hidden');
   document.body.style.overflow = '';
+  quantityInput.value = 1;
 }
 
 closeBtn.addEventListener('click', closeModal);
