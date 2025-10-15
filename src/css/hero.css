@@ -4,6 +4,7 @@
   text-align: left;
   overflow: hidden;
   max-width: 100%;
+  padding-bottom: 32px;
 }
 
 /* ==== SLIDER ==== */
@@ -159,6 +160,9 @@
 
 /* ===== Desktop ===== */
 @media (min-width: 1440px) {
+  .hero {
+    padding-bottom: 32px;
+  }
   .hero-slider {
     height: 395px;
     border-radius: 16px;
@@ -185,6 +189,6 @@
   }
 
   .slider-nav {
-    margin-top: 24px;
+    margin: 0;
   }
 }
