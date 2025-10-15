@@ -204,14 +204,24 @@ categoriesList.addEventListener('click', e => {
 fetchBooks();
 
 // 📚 ВІДКРИТТЯ МОДАЛКИ
-document.addEventListener('click', e => {
+document.addEventListener('click', async e => {
   const btn = e.target.closest('.learn-more-btn');
   if (!btn) return;
 
   const bookId = btn.dataset.id;
-  if (typeof openBookModal === 'function') {
-    openBookModal(bookId);
-  } else {
-    console.warn('openBookModal() не знайдено — перевір підключення modal.js');
+
+  showLoader();
+  try {
+    if (typeof openBookModal === 'function') {
+      await openBookModal(bookId);
+    } else {
+      console.warn(
+        'openBookModal() не знайдено — перевір підключення modal.js'
+      );
+    }
+  } catch (err) {
+    console.error('Помилка при відкритті модалки:', err);
+  } finally {
+    hideLoader();
   }
 });
