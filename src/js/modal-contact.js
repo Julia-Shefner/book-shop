@@ -1,5 +1,4 @@
 const form = document.querySelector('.contact-form');
-// const eventsBtn = document.querySelector('.events-btn');
 const btnList = document.querySelector('.events-list');
 const modal = document.querySelector('.contact-modal-overlay');
 const body = document.body;
@@ -8,13 +7,12 @@ const errorMessages = form.querySelectorAll('.error-message');
 const closeBtn = document.querySelector('.close-btn');
 const modalTitle = document.querySelector('.modal-paragraph');
 
-//  Backdrop click
 function onBackdropClick(event) {
   if (event.target === modal) {
     closeContactModal();
   }
 }
-// Open window logic
+
 btnList.addEventListener('click', openContactModal);
 function openContactModal(event) {
   const eventsBtn = event.target.closest('.events-btn');
@@ -35,13 +33,13 @@ function openContactModal(event) {
 
   modal.addEventListener('click', onBackdropClick);
 }
-// keyboard event
+
 function onEscPress(event) {
   if (event.key === 'Escape' || event.code === 'Escape') {
     closeContactModal();
   }
 }
-// Close window logic
+
 closeBtn.addEventListener('click', closeContactModal);
 function closeContactModal() {
   inputs.forEach(input => {
@@ -53,7 +51,6 @@ function closeContactModal() {
   modal.removeEventListener('click', onBackdropClick);
 }
 
-// Submit logic
 form.addEventListener('submit', handlerSubmit);
 function handlerSubmit(event) {
   event.preventDefault();

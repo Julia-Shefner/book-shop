@@ -14,10 +14,9 @@ new Swiper('.feedback-swiper', {
     prevEl: '.swiper-button-pre',
   },
   keyboard: {
-    enabled: true, // Увімкнути керування з клавіатури
-    onlyInViewport: true, // Працює лише коли слайдер у полі зору
+    enabled: true,
+    onlyInViewport: true,
   },
-  // autoHeight: false,       // змушує всі слайди мати однакову висоту (найвищу серед них).
   grabCursor: true,
   breakpoints: {
     375: {

@@ -1,4 +1,3 @@
-// ====== ІМПОРТИ ======
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import iziToast from 'izitoast';
@@ -10,7 +9,6 @@ iziToast.settings({
   transitionOut: 'fadeOutUp',
 });
 
-// ====== ІНІЦІАЛІЗАЦІЯ АКОРДЕОНУ ======
 document.addEventListener('DOMContentLoaded', () => {
   window.accordionInstance = new Accordion('.js-accordion', {
     duration: 380,
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ====== ЕЛЕМЕНТИ ======
 const backdrop = document.getElementById('modal-backdrop');
 const closeBtn = document.getElementById('close-modal');
 const addToCartBtn = document.getElementById('add-to-cart');
@@ -33,7 +30,6 @@ const quantityInput = document.getElementById('quantity');
 const increase = document.getElementById('increase');
 const decrease = document.getElementById('decrease');
 
-// ====== ВІДКРИТТЯ МОДАЛКИ ======
 document.addEventListener('click', async e => {
   if (e.target.classList.contains('learn-more-btn')) {
     const bookCard = e.target.closest('.book-card');
@@ -80,7 +76,6 @@ document.addEventListener('click', async e => {
   }
 });
 
-// ====== ЗАКРИТТЯ ======
 function closeModal() {
   backdrop.classList.add('is-hidden');
   document.body.style.overflow = '';
@@ -94,7 +89,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-// ====== КІЛЬКІСТЬ ======
 if (increase && decrease && quantityInput) {
   increase.addEventListener('click', () => {
     quantityInput.value = parseInt(quantityInput.value) + 1;
@@ -107,7 +101,6 @@ if (increase && decrease && quantityInput) {
   });
 }
 
-// ====== TOAST-ПОВІДОМЛЕННЯ ======
 function getPluralForm(count, singular, plural) {
   return count === 1 ? singular : plural;
 }
@@ -138,7 +131,6 @@ buyNowBtn.addEventListener('click', e => {
   buyNowBtn.blur();
 });
 
-// ФУНКЦІЯ ДЛЯ BOOKS.JS
 window.openBookModal = async function (bookId) {
   try {
     const res = await fetch(

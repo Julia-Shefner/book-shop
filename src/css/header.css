@@ -22,7 +22,7 @@
   align-items: center;
 }
 body.menu-open {
-  overflow-y: hidden; /* блокує вертикальний і горизонтальний скрол */
+  overflow-y: hidden;
 }
 .header-menu.active {
   opacity: 1;
@@ -31,21 +31,6 @@ body.menu-open {
   transform: translateY(0);
 }
 
-/* .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-/* .header-nav-link {
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-} */
-/* .header-nav-link:hover,
-.header-nav-link:focus {
-  opacity: 0.2;
-} */
 .icon-logo {
   fill: #010100;
 }

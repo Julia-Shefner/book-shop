@@ -41,7 +41,6 @@
 }
 
 /* Image styles */
-
 .events-image {
   border-radius: 16px;
   width: 342px;
@@ -51,7 +50,6 @@
 }
 
 /* List element styles */
-
 .events-list-item {
   width: 343px;
   height: 521px;
@@ -65,7 +63,6 @@
 }
 
 /* Register button */
-
 .events-btn {
   width: 94px;
   height: 24px;
@@ -93,7 +90,6 @@
 }
 
 /* Arrow buttons */
-
 .swiper-btn {
   display: flex;
   flex-direction: row;

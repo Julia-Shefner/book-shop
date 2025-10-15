@@ -32,3 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const footerBtn = document.querySelector('.footer-form-button');
+footerBtn.addEventListener('mouseup', () => footerBtn.blur());
+footerBtn.addEventListener('touchend', () => footerBtn.blur());

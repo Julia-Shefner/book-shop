@@ -1,4 +1,3 @@
-/* ----------------feedbacks section--------------- */
 .section-title {
   margin-bottom: 24px;
 }
@@ -12,16 +11,16 @@
 .feedback {
   padding-top: 64px;
   padding-bottom: 64px;
-  position: relative; /* щоб кнопки позиціонувались відносно секції */
+  position: relative;
 }
 
 .feedback-list {
   display: flex;
-  align-items: stretch; /* усі li однакової висоти */
+  align-items: stretch;
 }
 
 .feedback-item {
-  min-height: 244px; /* для мобільних */
+  min-height: 244px;
   font-size: 18px;
   font-weight: 400;
   display: flex;
@@ -30,7 +29,7 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
   padding: 32px;
-  justify-content: space-between; /*текст зверху, аватар внизу  */
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -47,7 +46,7 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
-  margin-top: auto; /* “приклеює” донизу, але все одно по центру горизонтально */
+  margin-top: auto;
 }
 
 .feedback-item-userimg {
