@@ -76,9 +76,9 @@
 
 .slide-text a:hover,
 .slide-text a:focus {
-  background-color: transparent;
+  background-color: #0b0500;
   border: 0.52px solid #0b0500;
-  color: #0b0500;
+  /* color: #0b0500; */
 }
 
 /* ==== SLIDER NAVIGATION ==== */
@@ -163,6 +163,7 @@
   .hero {
     padding-bottom: 32px;
   }
+
   .hero-slider {
     height: 395px;
     border-radius: 16px;
