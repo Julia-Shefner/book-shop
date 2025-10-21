@@ -123,6 +123,7 @@
 }
 
 .error-message {
+  position: absolute;
   display: none;
   color: #ad0000;
   font-size: 12px;
